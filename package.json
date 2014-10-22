@@ -1,0 +1,48 @@
+{
+  "name": "ceaseless-static",
+  "description": "Generated static site for the Ceaseless page.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/chrislim/ceaseless-static",
+  "author": {
+    "name": "Chris",
+    "url": "http://github.com/chrislim/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chrislim/ceaseless-static.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrislim/ceaseless-static/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "grunt assemble"
+  },
+  "devDependencies": {
+    "assemble": "~0.4.37",
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "handlebars-helper-compose": "chrislim/handlebars-helper-compose",
+    "load-grunt-tasks": "~0.4.0",
+    "time-grunt": "~0.3.1"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/chrislim/ceaseless-static/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "assemble",
+    "templates",
+    "handlebars",
+    "site generator",
+    "site builder",
+    "grunt"
+  ]
+}
