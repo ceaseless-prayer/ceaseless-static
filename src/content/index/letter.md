@@ -36,7 +36,7 @@ Anyone with a Facebook account can sign up for Ceaseless to get 3 friends a day.
 
 #### __Step 2: Share your joy__
 
-If after using Ceaseless you’ve experienced more joy in God, the next step is to invite others to join. As your friends pray for 3 friends a day, you show up as well and get notified that others have been asked to pray for you. The more friends that sign up, the more often you are remembered in prayer, the more joy is shared.
+If after using Ceaseless you’ve experienced more joy in God, the next step is to <strong>[share it and invite others to join](http://www.ceaselessprayer.com/landing/pray-for-everyone-on-facebook.html)</strong>. As your friends pray for 3 friends a day, you show up as well and get notified that others have been asked to pray for you. The more friends that sign up, the more often you are remembered in prayer, the more joy is shared.
 
 #### __Step 3: Share your relationships__
 
@@ -68,4 +68,7 @@ Christopher Lim
 
 Founder, TheoTech
 
-
+<ul class="actions">
+  <li><a href="#" class="button special">{{ cta1 }}</a></li>
+  <li><a href="#" class="button">{{ share }}</a></li>
+</ul>
