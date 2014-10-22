@@ -1,9 +1,9 @@
 ---
 title: An Invitation to Joy
-headline: Share your joy by praying for others
-subhead:
-cta1:
-cta2:
+headline: Experience the joy of praying for others
+subhead: Pray for 3 friends each day and together we can pray for everyone on earth.
+cta1: Start praying for your friends
+cta2: Learn More
 ct1:
 ct2:
 vp1:
@@ -26,11 +26,11 @@ letter_title:
 ---
 <!-- Banner -->
       <section id="banner">
-        <h2>Experience the joy of praying for others</h2>
-        <p>Pray for 3 friends each day and together we can pray for everyone on earth.</p>
+        <h2>{{ headline }}</h2>
+        <p>{{ subhead }}</p>
         <ul class="actions">
-          <li><a href="#" class="button special">Sign Up</a></li>
-          <li><a href="#" class="button">Learn More</a></li>
+          <li><a href="#" class="button special">{{ cta1 }}</a></li>
+          <li><a href="#main" class="button">{{ cta2 }}</a></li>
         </ul>
       </section>
 
@@ -105,19 +105,35 @@ letter_title:
 
       </section>
 
+      <section id="letter" class="container">
+        <section class="box">
+          {{md "src/content/index/letter.md" }}
+        </section>
+      </section>
+
     <!-- CTA -->
       <section id="cta">
 
-        <h2>Sign up for beta access</h2>
-        <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
+        <h2>Ask a question or contact us</h2>
+        <p>If you have any questions about Ceaseless, contact us below. Don't worry, we won't use your e-mail address for any other purpose.</p>
 
-        <form>
+        <form method="post" class="contact-form" data-action-path="http://forms.brace.io/chrislim@theotech.org">
           <div class="row uniform half collapse-at-2">
-            <div class="8u">
+            <div class="6u">
+              <input type="text" name="name" placeholder="Name">
+            </div>
+            <div class="6u">
               <input type="email" name="email" id="email" placeholder="Email Address" />
             </div>
-            <div class="4u">
-              <input type="submit" value="Sign Up" class="fit" />
+          </div>
+          <div class="row uniform half">
+            <div class="12u">
+              <textarea name="message" rows="6" placeholder="Message"></textarea>
+            </div>
+          </div>
+          <div class="row uniform half collapse-at-2">
+            <div class="12u">
+              <input type="submit" value="Send Message" class="fit" />
             </div>
           </div>
         </form>
