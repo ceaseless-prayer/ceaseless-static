@@ -1,0 +1,24 @@
+---
+layout: src/templates/layouts/landing.hbs
+title: Share your joy
+headline: Share the joy of praying for others.
+---
+    <!-- Banner -->
+      <section id="banner">
+        <h2>{{ headline }}</h2>
+        <p>&ldquo;Pray earnestly to the Lord of the harvest to send out laborers into his harvest.&rdquo; (Luke 10:2 ESV)</p>
+      </section>
+
+		<!-- Main -->
+			<section id="main" class="container">
+				<div class="box special">
+					<h3>Invite others to pray for their friends with Ceaseless</h3>
+          <div class="infographic">
+            {{> addthis-toolbox }}
+            <br/>
+            <span class="image fit"><img src="images/ceaseless_fb_infographic_en.jpg" alt="" /></span>
+          </div>
+				</div>
+			</section>
+
+      {{> addthis-scripts }}
