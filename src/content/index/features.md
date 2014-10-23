@@ -1,5 +1,5 @@
 
-<section class="box special features">
+<section id="features" class="box special features">
   <div class="features-row">
     <section>
       <span class="icon major fa-bolt accent5"></span>

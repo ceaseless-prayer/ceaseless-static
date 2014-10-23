@@ -68,7 +68,4 @@ Christopher Lim
 
 Founder, TheoTech
 
-<ul class="actions">
-  <li><a href="#" class="button special">{{ cta1 }}</a></li>
-  <li><a href="#" class="button">{{ share }}</a></li>
-</ul>
+{{> call-to-action }}
