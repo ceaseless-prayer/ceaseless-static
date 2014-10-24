@@ -1,0 +1,46 @@
+---
+layout: src/templates/layouts/landing.hbs
+title: Ask for prayer
+headline: You don't have to be a Christian to ask for prayer
+---
+    <!-- Banner -->
+      <section id="banner">
+        <h2>{{ headline }}</h2>
+        <p>&ldquo;First of all, then, I urge that supplications, prayers, intercessions, and thanksgivings be made for all people&rdquo; (1 Timothy 2:1 ESV)</p>
+        <ul class="actions">
+          <li><a href="#main" class="button special">Ask for prayer</a></li>
+        </ul>
+      </section>
+
+		<!-- Main -->
+			<section id="main" class="container">
+				<div class="box special">
+					<h3>Tell us how we can pray for you</h3>
+          <p>Anonymous. Safe. Free. Every field is optional.</p>
+          <form method="post" action="#">
+            <div class="row uniform half">
+							<div class="12u">
+								<textarea name="message" id="message" placeholder="Enter your request" rows="6"></textarea>
+							</div>
+						</div>
+            <div class="row uniform half collapse-at-2">
+							<div class="6u">
+								<input type="text" name="name" id="name" value="" placeholder="Name (Optional)" />
+							</div>
+							<div class="6u">
+								<input type="email" name="email" id="email" value="" placeholder="Email (Optional)" />
+							</div>
+						</div>
+						<div class="row uniform">
+							<div class="12u">
+								<ul class="actions align-center">
+									<li><input type="submit" value="Submit Prayer Request" /></li>
+								</ul>
+							</div>
+						</div>
+
+          </form>
+				</div>
+			</section>
+
+      {{> addthis-scripts }}
