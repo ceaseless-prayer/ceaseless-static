@@ -6,7 +6,7 @@ headline: You don't have to be a Christian to ask for prayer
     <!-- Banner -->
       <section id="banner">
         <h2>{{ headline }}</h2>
-        <p>&ldquo;First of all, then, I urge that supplications, prayers, intercessions, and thanksgivings be made for all people&rdquo; (1 Timothy 2:1 ESV)</p>
+        <p>&ldquo;First of all, then, I urge that supplications, prayers, intercessions, and thanksgivings be made for <em>all people</em>&rdquo; (1 Timothy 2:1 ESV)</p>
         <ul class="actions">
           <li><a href="#main" class="button special">Ask for prayer</a></li>
         </ul>
@@ -17,7 +17,7 @@ headline: You don't have to be a Christian to ask for prayer
 				<div class="box special">
 					<h3>Tell us how we can pray for you</h3>
           <p>Anonymous. Safe. Free. Every field is optional.</p>
-          <form method="post" action="#">
+          <form method="post" class="contact-form" data-action-path="http://forms.brace.io/prayer@pray.theotech.org">
             <div class="row uniform half">
 							<div class="12u">
 								<textarea name="message" id="message" placeholder="Enter your request" rows="6"></textarea>
@@ -33,6 +33,7 @@ headline: You don't have to be a Christian to ask for prayer
 						</div>
 						<div class="row uniform">
 							<div class="12u">
+                <input type="hidden" name="prayer_request_source" value="landing_page"/>
 								<ul class="actions align-center">
 									<li><input type="submit" value="Submit Prayer Request" /></li>
 								</ul>
