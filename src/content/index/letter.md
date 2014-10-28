@@ -17,7 +17,7 @@ Although the product was just a prototype, I dubbed it Ceaseless and shared it w
 
 I got mixed reviews. Some told me they didn’t need it because they had their own prayer systems. Others said they wanted to know more details on how to pray for people. However, many said they loved its simplicity, how it strengthened their prayer lives and gave them joy in focusing on others in prayer. There were many uncanny stories where Ceaseless surfaced someone to pray for at precisely the time they felt like they needed it without them asking for it.
 
-After about 6 months of praying for friends, I discovered that with 70 users we had prayed for over 20,000 people. Huh. Well that’s kinda cool. 
+After about 6 months of praying for friends, I discovered that with 70 users we had prayed for over 20,000 people. Mind blown. 
 
 I did a bit of math to see how high this number could practically go.
 
