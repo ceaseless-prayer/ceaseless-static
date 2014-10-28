@@ -7,10 +7,9 @@
       <li>
         <a href="" class="icon fa-angle-down">Menu</a>
         <ul>
-          <li><a href="#main">What is Ceaseless?</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#letter">Backstory</a></li>
-          <li><a href="#cta">Contact</a></li>
+          {{#each menuItems}}
+            <li><a href="{{url}}">{{label}}</a></li>
+          {{/each}}
           <li><a href="share.html">Share your joy</a></li>
           <li><a href="request_prayer.html">Request prayer</a></li>
 
