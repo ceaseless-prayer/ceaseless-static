@@ -21,7 +21,9 @@
     <section>
       <span class="icon major fa-heart accent2"></span>
       <h3>Enjoyable</h3>
-      <p>Jesus said our we would experience joy by asking and receiving in his name (John 16:24). Ceaseless helps you ask God for all the breadth and depth that he invites you to so you can experience the fullness of joy he promised.</p>
+      <p>Jesus said we would experience joy by asking and receiving in his name (John 16:24). Ceaseless helps you ask God for all the breadth and depth that he invites you to so you can experience the fullness of joy he promised.</p>
     </section>
   </div>
+  <br/>
+  {{> call-to-action }}
 </section>
