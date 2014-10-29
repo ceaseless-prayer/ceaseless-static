@@ -989,6 +989,10 @@
 	@-ms-keyframes reveal-header { 0% { top: -5em; } 100% { top: 0; } }
 	@keyframes reveal-header { 0% { top: -5em; } 100% { top: 0; } }
 
+  #header-narrow {
+    display: none;
+  }
+
 	#header {
 		background: #454d4e;
 		color: #bbb;
