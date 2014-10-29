@@ -4,7 +4,8 @@
     <section>
       <span class="icon major fa-bolt accent5"></span>
       <h3>Simple</h3>
-      <p>We make it easy to remember to pray for others by giving you one place to gather everyone and everything you want to pray for and intelligently surfacing a few to pray for each day.</p>
+      <p>We make it easy to remember to pray for others by giving you one place to gather everyone\* and everything you want to pray for and intelligently surfacing a few to pray for each day.</p>
+      <h6>*Currently only Facebook is supported.</h6>
     </section>
     <section>
       <span class="icon major fa-picture-o accent3"></span>
