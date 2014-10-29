@@ -98,10 +98,10 @@ module.exports = function(grunt) {
           }],
           layout: '<%= config.src %>/templates/layouts/default.hbs',
           data: '<%= config.src %>/data/*.{json,yml}',
-          partials: '<%= config.src %>/templates/partials/*.hbs'
+          partials: '<%= config.src %>/templates/partials/**/*.hbs'
         },
         files: {
-          '<%= config.dist %>/': ['<%= config.src %>/pages/*.hbs',
+          '<%= config.dist %>/': ['<%= config.src %>/pages/**/*.hbs',
           '<%= config.src %>/content/events/**/*.hbs']
         }
       }
