@@ -59,6 +59,15 @@
 		display: none;
 	}
 
+  #header-narrow {
+    display: block;
+    width: 8em;
+    margin-left: -4em;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+  }
+
 /* Banner */
 
 /* Layers */

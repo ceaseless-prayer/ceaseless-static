@@ -371,8 +371,8 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e89980;
-			box-shadow: 0 0 0 1px #e89980;
+			border-color: #81c6cb;
+			box-shadow: 0 0 0 1px #81c6cb;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -567,7 +567,7 @@
 			}
 
 			.icon.major.accent2 {
-				background: #e89980;
+				background: #81c6cb;
 				color: #ffffff;
 			}
 
@@ -988,6 +988,10 @@
 	@-o-keyframes reveal-header { 0% { top: -5em; } 100% { top: 0; } }
 	@-ms-keyframes reveal-header { 0% { top: -5em; } 100% { top: 0; } }
 	@keyframes reveal-header { 0% { top: -5em; } 100% { top: 0; } }
+
+  #header-narrow {
+    display: none;
+  }
 
 	#header {
 		background: #454d4e;
