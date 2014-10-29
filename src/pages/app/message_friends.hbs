@@ -1,0 +1,57 @@
+---
+layout: src/templates/layouts/fb-app-layout.hbs
+---
+<section class="container" id="main">
+  <header>
+    <h2>Thanks for praying!</h2>
+    <p>&ldquo;Therefore, confess your sins to one another and pray for one another, that you may be healed. The prayer of a righteous person has great power as it is working.&rdquo; (James 5:16 ESV)</p>
+  </header>
+  <div class="box">
+    {{> loading-spinner }}
+    {{> fb-login-wrapper }}
+    <p>Your Facebook authorization has been renewed. Your friends' pictures and statuses should appear in future e-mails. Thanks for using Ceaseless!</p>
+  </div>
+  <div class="box">
+    <h5>Message friends you prayed for:</h5>
+      <ul id="friends-to-message" class="nav nav-list friend-list"></ul>
+      <div class="loading_spinner">
+        <img src="assets/img/spinner.gif"/>
+      </div>
+
+      <div class="sending_spinner">
+        <img src="assets/img/spinner.gif"/>
+      </div>
+  </div>
+</section>
+<script type="text/javascript">
+// annoying, but we need to detect since
+// facebook doesn't let us use the send dialog
+// on mobile web.
+function isMobile() {
+  try{ document.createEvent("TouchEvent"); return true; }
+  catch(e){ return false; }
+}
+var sendMessage = function (recipient) {
+  // FB doesn't support send dialog on mobile web
+  if(!isMobile()) {
+    FB.ui({
+      method: 'send',
+      to: recipient,
+      link: 'http://www.ceaselessprayer.com'
+    });
+  } else {
+    // we'll fallback to linking to profile page
+    window.open('http://www.facebook.com/'+recipient, '_blank');
+  }
+};
+
+var getFbIds = function () {
+  var fb_ids = $.QueryString["fb_ids"] || [];
+  if(fb_ids.length > 0) {
+    return fb_ids.split(",");
+  } else {
+    return fb_ids;
+  }
+};
+</script>
+{{> fb-scripts }}
