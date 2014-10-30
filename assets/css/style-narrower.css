@@ -61,10 +61,10 @@
 
   #header-narrow {
     display: block;
-    width: 8em;
-    margin-left: -4em;
+    width: 12em;
+    margin-left: -6em;
     position: absolute;
-    top: 15px;
+    top: 100px;
     left: 50%;
   }
 

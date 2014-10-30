@@ -24,6 +24,13 @@
 		font-size: 1em;
 	}
 
+/* Header */
+  #header-narrow {
+    width: 8em;
+    margin-left: -4em;
+    top: 15px;
+  }
+
 /* Section/Article */
 
 	header.major {
