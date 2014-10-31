@@ -1,0 +1,33 @@
+---
+layout: src/templates/layouts/landing.hbs
+title: Frequently Asked Questions
+headline: Frequently Asked Questions
+subhead: The who, what, when, where, why, how of Ceaseless
+cta1: Answer my questions
+cta2: I want to ask a new question
+share: Share Ceaseless
+---
+<!-- Banner -->
+<section id="banner">
+  <h2>{{ headline }}</h2>
+  <p>{{ subhead }}</p>
+  <ul class="actions">
+    <li><a href="#main" class="button special">{{ cta1 }}</a></li>
+    <li><a href="contact.html" class="button">{{ cta2 }}</a></li>
+  </ul>
+</section>
+
+
+<!-- Main -->
+<section id="main" class="container">
+
+  <section id="content" class="container">
+    <section class="box">
+      {{md "src/content/faq/faq.md" }}
+      <hr/>
+      {{> call-to-action }}
+    </section>
+  </section>
+</section>
+
+{{> addthis-scripts }}
