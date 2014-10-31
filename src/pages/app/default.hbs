@@ -1,48 +1,57 @@
 ---
 layout: src/templates/layouts/fb-app-layout.hbs
-headline: Pray without ceasing
 ---
 
-<!-- Banner -->
-<section id="banner">
-  <h2>{{ headline }}</h2>
-  <p>Trust in the Lord with all your heart and lean not on your own understanding</p>
-</section>
 <style type="text/css">
-  /*.prayer_progress {*/
-  /*display: none;*/
-  /*}*/
+  .prayer_progress {
+    display: none;
+  }
 </style>
 <section id="main" class="container">
-  <div class="box special">
-    <header class="major">
-      <h2>Pray without ceasing</h2>
-    </header>
-    {{> loading-spinner }}
-    {{> fb-login-wrapper }}
+  <header>
+    <h2>Pray without ceasing</h2>
+    <p>(1 Thessalonians 5:17 ESV)</p>
+  </header>
+  <div class="box">
     <div class="row">
-      <div class="prayer_progress">
-        <h3>Prayer progress</h3>
-        <label>
-          <p class="lead" id="global-friend-count"></p>
+      <div class="prayer_progress 12u">
+        <h2>Prayer progress</h2>
+        <div>
+          <h3 id="global-friend-count"></h3>
           <span id="friends-remaining"></span>
-
-          <div class="progress progress-info progress-striped">
-            <div id="personal-progress-bar" class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                 style="width: 60%;">
-              <span class="sr-only">60% Complete</span>
+          <div class="progress">
+            <div id="personal-progress-bar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                 aria-valuemax="100" style="width: 60%;">
+              <span class="sr-only">60%</span>
             </div>
           </div>
-        </label>
+        </div>
 
         <div>
-          <h4>Actions</h4>
-          <ul class="nav nav-list">
-            <li><a href="invite.html"><i class="icon-user"></i> Invite Others</a></li>
-            <li><a href="preferences.html"><i class="icon-wrench"></i> Change Preferences</a></li>
-            <li><a href="donate.html"><i class="icon-thumbs-up"></i> Support Ceaseless</a></li>
-            <li><a href="index.html#cta"><i class="icon-question-sign"></i> Give Feedback or Get Help</a></li>
+          <h3>Actions</h3>
+          <ul>
+            <li><a href="invite.html"><span class="icon fa-user"></span> &nbsp; Invite Others</a></li>
+            <li><a href="preferences.html"><span class="icon fa-wrench"></span> &nbsp; Change Preferences</a></li>
+            <li><a href="donate.html"><span class="icon fa-thumbs-up"></span> &nbsp; Support Ceaseless</a></li>
+            <li><a href="contact.html"><span class="icon fa-question"></span> &nbsp; Give Feedback or Get Help</a></li>
           </ul>
+        </div>
+        <hr/>
+      </div>
+    </div>
+    <div class="row">
+      {{> loading-spinner }}
+      <!-- custom login wrapper that needs to support registration -->
+      <div class="fb-login-wrapper">
+        <div
+                class="fb-login-button"
+                data-show-faces="true"
+                data-width="265"
+                data-max-rows="2"
+                data-registration-url=""
+                data-onlogin="setupRegistrationUrl()"
+                data-size="large"
+                data-scope="email,user_status,friends_photos,friends_status">
         </div>
       </div>
     </div>
