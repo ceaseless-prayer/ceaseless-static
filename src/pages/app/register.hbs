@@ -9,49 +9,59 @@ layout: src/templates/layouts/fb-app-layout.hbs
 </style>
 <section class="container" id="main">
   <header>
-    <h2>Change Preferences</h2>
+    <h2>Sign up for Ceaseless</h2>
   </header>
   <div class="box">
-
-    <div class="signin_intro">
-      <h3 class="form-signin-heading">Sign up or Sign in</h3>
-      <h5>Get a daily e-mail with 3 friends to pray for. Together, we can pray for everyone on Facebook in a
-        year!</h5>
-      Click below to log in or sign up and don't worry, we won't bug your friends.
-    </div>
-
-    {{> loading-spinner }}
-    <!-- custom login wrapper that needs to support registration -->
-    <div class="fb-login-wrapper">
-      <div
-              class="fb-login-button"
-              data-show-faces="true"
-              data-width="265"
-              data-max-rows="2"
-              data-registration-url=""
-              data-onlogin="setupRegistrationUrl()"
-              data-size="large"
-              data-scope="email,user_status,friends_photos,friends_status">
+    <div class="row">
+      <div class="12u">
+        <div class="signup_intro">
+          <p>Click "Log in" below to sign up and don't worry, we won't bug your friends.</p>
+          <p>You will be asked for your e-mail address so we know where to send the three friends to pray for each day.</p>
+          {{> loading-spinner }}
+          <!-- custom login wrapper that needs to support registration -->
+          <div class="fb-login-wrapper">
+            <div
+                    class="fb-login-button"
+                    data-show-faces="true"
+                    data-width="265"
+                    data-max-rows="2"
+                    data-registration-url=""
+                    data-onlogin="setupRegistrationUrl()"
+                    data-size="large"
+                    data-scope="email,user_status,friends_photos,friends_status">
+            </div>
+          </div>
+          <p>When you login with Facebook, we will grab your list of friends to start sending you
+            people to pray for. Your data will be saved, but we do not post back to your Facebook.</p>
+          <p>If you have more questions, you can <a href="faq.html">read more</a> or <a href="contact.html">contact us</a>.</p>
+        </div>
       </div>
     </div>
-    <p>We'll grab your list of friends from Facebook to start sending you
-      friends to pray for. Your data will be saved, but we do not post back to your Facebook.</p>
-    <p>You can also <a href="index.html">Learn more</a> or <a href="contact.html">Contact us</a>.</p>
     <div class="registration_input">
-      <label>Please enter the e-mail address you want to use to receive the Daily Prayer Digest.</label>
-      <input id="emailToUse" type="email" class="input-block-level" placeholder="Email address"/>
-      <button id="registerEmail" class="btn btn-large btn-primary" type="submit">Submit</button>
+      <div class="row">
+        <div class="12u">
+          <label for="emailToUse">Enter the e-mail address you want to use for Ceaseless.</label>
+          <div class="row uniform half collapse-at-2">
+            <div class="9u">
+              <input id="emailToUse" type="email" placeholder="Email address"/>
+            </div>
+            <div class="3u">
+              <input id="registerEmail" class="fit" value="Submit" type="submit"/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="registration_confirmation">
-      <label>Thanks for registering! Check your inbox (and maybe spam) for a link to confirm your
+      <p>Thanks for registering! Check your <span id="chosen_email"></span> e-mail inbox (and maybe spam) for a link to confirm your
         account. We cannot send you friends to pray for until your account is confirmed.
-      </label>
+        <a href="default.html" class="button fit special">Go to your prayer dashboard</a>
+      </p>
     </div>
     <div class="registration_not_confirmed">
-      <label>Sorry, we couldn't register you at this time.</label>
-    </div>
-    <div class="row">
-
+      <p>Sorry, we couldn't register you at this time.
+        <a href="contact.html?subject=I could not register">Contact us</a> if you need help.
+      </p>
     </div>
   </div>
 </section>
@@ -67,13 +77,11 @@ layout: src/templates/layouts/fb-app-layout.hbs
       success: function (data) {
         if (data.success) {
           $("div.registration_input").hide();
-          $("div.registration_confirmation label")
-                  .text("Thanks for registering! Check your " + email + " inbox (and maybe spam) for a link to confirm your account. We cannot send you friends to pray for until your account is confirmed.");
+          $("#chosen_email").text(email);
           $("div.registration_confirmation").show();
         } else {
           $("div.registration_not_confirmed").show();
         }
-        // redirect to the main dashboard
       },
       data: {
         'email': email,
@@ -96,9 +104,8 @@ layout: src/templates/layouts/fb-app-layout.hbs
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
-      $("div.loading_spinner").hide();
-      $("div.signin_intro").hide();
-      $(".login-divider").hide();
+      $("div.loading-spinner").hide();
+      $("div.signup_intro").hide();
       $("div.registration_input").show();
     }
   };
