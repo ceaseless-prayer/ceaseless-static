@@ -1,78 +1,111 @@
 ---
 layout: src/templates/layouts/fb-app-layout.hbs
 ---
+<style type="text/css">
+  .suspend_account, .account_suspended, .account_not_suspended, .unsuspend_account,
+  .sending_spinner, #feedback_form
+  {
+    display: none;
+  }
+</style>
 <section class="container" id="main">
   <header>
-<h2>Renew Facebook Connection</h2>
+    <h2>Suspend Ceaseless Account</h2>
   </header>
   <div class="box">
-{{> loading-spinner }}
-{{> fb-login-wrapper }}
+    {{> loading-spinner }}
+    {{> fb-login-wrapper }}
 
-<div class="suspend_account">
-  <h3 class="form-signin-heading">Suspend Account</h3>
-  <p>We're sorry to see you go!
-  Thank you for joining us in praying for everyone on earth.
-  </p>
-  <button id="suspend_account_btn" class="button">Suspend account</button>
-  <div class="sending_spinner">
-<img src="images/spinner.gif"/>
+    <div class="suspend_account">
+      <h3>Suspend Account</h3>
+
+      <p>We're sorry to see you go!
+        Thank you for joining us in praying for everyone on earth.
+      </p>
+      <button id="suspend_account_btn" class="button big special">Suspend account</button>
+      <a href="preferences.html" class="button big">Cancel</a>
+      <div class="sending_spinner">
+        <img src="images/spinner.gif"/>
+      </div>
+      <div class="account_suspended">
+        <label>All set! Please give us feedback.</label>
+        <div class="video-container">
+          <iframe id="feedback_form" height="500"
+                  src="https://docs.google.com/forms/d/15AlxeQppGom4rEHYNGcuRj7vM9mw1ZX1WJ4SX36vqug/viewform?embedded=true"
+                  frameborder="0" marginheight="0" marginwidth="0">Loading...
+          </iframe>
+        </div>
+      </div>
+      <div class="account_not_suspended">
+        <label>Sorry, we couldn't suspend your account at this time. <a href="contact.html">Contact
+          us</a> to get help.</label>
+      </div>
+    </div>
+
+    <div class="unsuspend_account">
+      <h3>Re-enable Account</h3>
+
+      <p>Welcome back!
+        Thank you for joining us in praying for everyone on earth.
+      </p>
+      <button id="enable_account_btn" class="button big special">Enable account</button>
+      <a href="preferences.html" class="button big">Cancel</a>
+      <div class="sending_spinner">
+        <img src="images/spinner.gif"/>
+      </div>
+    </div>
   </div>
-<div class="account_suspended">
-  <label>All set! Please give us feedback.</label>
-  <iframe id="feedback_form" src="https://docs.google.com/forms/d/15AlxeQppGom4rEHYNGcuRj7vM9mw1ZX1WJ4SX36vqug/viewform?embedded=true" width="300" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-</div>
-<div class="account_not_suspended">
-  <label>Sorry, we couldn't suspend your account at this time. <a href="mailto:ceaseless@theotech.org">Contact us</a> to get help.</label>
-</div>
-  </div>
-  <div class="unsuspend_account">
-<h3 class="form-signin-heading">Re-enable Account</h3>
-<p>Welcome back!
-Thank you for joining us in praying for everyone on earth.
-</p>
-<button id="enable_account_btn" class="btn btn-success">Enable account</button>
-<div class="sending_spinner">
-  <img src="assets/img/spinner.gif"/>
-</div>
-  </div>
-</div>
 </section>
 
 <script type="text/javascript">
-var changeSuspension = function (e) {
-  e.preventDefault();
-  $("span.sending_spinner").show();
-  $.ajax({
-    type: 'POST',
-    url: 'api/suspend.php',
-    dataType: 'json',
-    success: function (data) {
-      $("span.sending_spinner").hide();
-      if($.QueryString['suspend'] === 'false') {
-        window.location = '/';
-      } else {
-        if (data.success) {
-          $(".account_not_suspended").hide();
-          $(".account_suspended").show();
-          $("#suspend_account_btn").hide();
-          $("#feedback_form").show();
+  var changeSuspension = function (e) {
+    e.preventDefault();
+    $("span.sending_spinner").show();
+    $.ajax({
+      type: 'POST',
+      url: 'api/suspend.php',
+      dataType: 'json',
+      success: function (data) {
+        $("span.sending_spinner").hide();
+        if ($.QueryString['suspend'] === 'false') {
+          window.location = '/';
         } else {
-          $(".account_suspended").hide();
-          $(".account_not_suspended").show();
+          if (data.success) {
+            $(".account_not_suspended").hide();
+            $(".account_suspended").show();
+            $("#suspend_account_btn").hide();
+            $("#feedback_form").show();
+          } else {
+            $(".account_suspended").hide();
+            $(".account_not_suspended").show();
+          }
         }
-      }
-    },
-    data: {
-      'fb_id': FB.getUserID(),
-      'suspend': $.QueryString["suspend"]
-    },
-    async: true
-  });
-}
+      },
+      data: {
+        'fb_id': FB.getUserID(),
+        'suspend': $.QueryString["suspend"]
+      },
+      async: true
+    });
+  }
 
-$("#suspend_account_btn").on("click", changeSuspension);
-$("#enable_account_btn").on("click", changeSuspension);
+  $("#suspend_account_btn").on("click", changeSuspension);
+  $("#enable_account_btn").on("click", changeSuspension);
 </script>
-{{> fb-scripts }}
+<script type="text/javascript">
+  var fbInitActions = {
+    connected: function () {
+      refreshToken();
+
+      if ($.QueryString["suspend"] === 'true') {
+        $("div.suspend_account").show();
+      } else {
+        $("div.unsuspend_account").show();
+      }
+
+      $("div.loading-spinner").hide();
+      $("div.fb-login-wrapper").hide();
+    }
+  };
+</script>
 

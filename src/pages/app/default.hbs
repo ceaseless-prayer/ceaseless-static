@@ -1,0 +1,81 @@
+---
+layout: src/templates/layouts/fb-app-layout.hbs
+headline: Pray without ceasing
+---
+
+<!-- Banner -->
+<section id="banner">
+  <h2>{{ headline }}</h2>
+  <p>Trust in the Lord with all your heart and lean not on your own understanding</p>
+</section>
+<style type="text/css">
+  /*.prayer_progress {*/
+  /*display: none;*/
+  /*}*/
+</style>
+<section id="main" class="container">
+  <div class="box special">
+    <header class="major">
+      <h2>Pray without ceasing</h2>
+    </header>
+    {{> loading-spinner }}
+    {{> fb-login-wrapper }}
+    <div class="row">
+      <div class="prayer_progress">
+        <h3>Prayer progress</h3>
+        <label>
+          <p class="lead" id="global-friend-count"></p>
+          <span id="friends-remaining"></span>
+
+          <div class="progress progress-info progress-striped">
+            <div id="personal-progress-bar" class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                 style="width: 60%;">
+              <span class="sr-only">60% Complete</span>
+            </div>
+          </div>
+        </label>
+
+        <div>
+          <h4>Actions</h4>
+          <ul class="nav nav-list">
+            <li><a href="invite.html"><i class="icon-user"></i> Invite Others</a></li>
+            <li><a href="preferences.html"><i class="icon-wrench"></i> Change Preferences</a></li>
+            <li><a href="donate.html"><i class="icon-thumbs-up"></i> Support Ceaseless</a></li>
+            <li><a href="index.html#cta"><i class="icon-question-sign"></i> Give Feedback or Get Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  var getPrayerProgress = function () {
+    $.ajax({
+      type: 'GET',
+      url: 'prayerProgress.php',
+      dataType: 'json',
+      success: function (data) {
+        // update global friend count (TODO cache it)
+        $("#global-friend-count").text('Globally, ' + data.progress.globalFriendCount + ' people are being prayed for by Ceaseless users.');
+
+        // update progress bar
+        var percentage = 100 - Math.round(data.progress.remainingFriendsCount / data.progress.totalFriends * 100);
+        $("#personal-progress-bar").css('width', percentage + '%');
+        $("#personal-progress-bar .sr-only").text(percentage + '%');
+        $("#friends-remaining").text("You have " + data.progress.remainingFriendsCount + " remaining friends to pray for this round.");
+      },
+      async: false
+    });
+  };
+</script>
+<script type="text/javascript">
+  var fbInitActions = {
+    connected: function () {
+      $("div.loading_spinner").hide();
+      $("div.fb-login-wrapper").show();
+      $("div.signin_intro").hide();
+      $("div.prayer_progress").show();
+      getPrayerProgress();
+    }
+  };
+</script>

@@ -1,27 +1,49 @@
 ---
 layout: src/templates/layouts/fb-app-layout.hbs
 ---
+<style type="text/css">
+    .preferences, .preferences_saved, .preferences_not_saved, .sending_spinner,
+    .suspend-account-link, .enable-account-link
+    {
+        display: none;
+    }
+</style>
 <section class="container" id="main">
   <header>
     <h2>Change Preferences</h2>
   </header>
   <div class="box">
+    {{> loading-spinner }}
+    {{> fb-login-wrapper }}
     <form>
       <div class="row">
         <div class="6u">
-          <label for="number_of_friends">How many friends do you want to pray for each day?</label>
+          <label for="friends_per_digest">How many friends do you want to pray for each day?</label>
           <div class="select-wrapper">
-            <select name="number_of_friends">
-              <option>3</option>
+            <select id="friends_per_digest">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
             </select>
           </div>
           <br/>
         </div>
         <div class="6u">
-          <label for="time_of_reminder">When do you want to receive the reminder?</label>
+          <label for="time">When do you want to receive the reminder?</label>
           <div class="select-wrapper">
-            <select name="time_of_reminder">
-              <option>6 AM</option>
+            <select id="time">
+              <option value="0">Midnight</option>
+              <option value="3">3 AM</option>
+              <option value="6">6 AM</option>
+              <option value="9">9 AM</option>
+              <option value="12">Noon</option>
+              <option value="15">3 PM</option>
+              <option value="18">6 PM</option>
+              <option value="21">9 PM</option>
             </select>
           </div>
           <br/>
@@ -29,13 +51,122 @@ layout: src/templates/layouts/fb-app-layout.hbs
       </div>
       <div class="row">
         <div class="12u">
-          <label for="break">Do you need a break?</label>
-          <input id="break" name="break" type="checkbox"><label for="break">Take a 7 day break</label>
+          <!-- TODO Skipping dealing with the timezone problem for now -->
+          <label for="pause">Do you need a break?</label>
+          <input type="checkbox" id="pause"/><label for="pause">Take a 7 day break</label>
         </div>
       </div>
-      <br/>
-      <button class="button" type="submit">Submit</button>
-        </div>
+      <hr/>
+      <div class="row">
+          <div class="6u">
+            <button class="button big special" id="save" type="submit">Submit</button>
+            <a href="default.html" class="button big" id="close" type="button">Close</a>
+            <br/>
+            <span class="sending_spinner">
+              <img src="images/spinner.gif"/>
+            </span>
+            <div class="preferences_saved">
+              <label>All set!</label>
+            </div>
+            <div class="preferences_not_saved">
+              <label>Sorry, we couldn't save your preferences at this time.</label>
+            </div>
+            <br/>
+          </div>
+          <div class="6u">
+            <div id="other_actions">
+                <header>
+                    <h3>Other actions:</h3>
+                </header>
+                <ul>
+                    <li><a href="default.html"><span class="icon fa-home"></span>&nbsp;Return home</a></li>
+                    <li class="suspend-account-link"><a href="suspend.html?suspend=true"><span class="icon fa-remove"></span> Suspend account</a></li>
+                    <li class="enable-account-link"><a href="suspend.html?suspend=false"><span class="icon fa-check"></span> Enable account</a></li>
+                </ul>
+            </div>
+          </div>
+      </div>
     </form>
   </div>
 </section>
+<script type="text/javascript">
+    var showSuspensionBtn = function () {
+        $.ajax({
+            type: 'GET',
+            url: 'api/suspend.php',
+            dataType: 'json',
+            success: function (data) {
+                var isSuspended = data.isSuspended;
+                if (isSuspended) {
+                    $(".enable-account-link").show();
+                } else {
+                    $(".suspend-account-link").show();
+                }
+            },
+            async: true
+        });
+    };
+
+    var savePreferences = function (e) {
+        e.preventDefault();
+        var email = $("#email").val();
+        var friends_per_digest = $("#friends_per_digest").val();
+        var time = $("#time").val();
+        var pause_duration = 0;
+        if($("#pause").prop("checked")) {
+            pause_duration = $("#pause_duration").text();
+        }
+        $("span.sending_spinner").show();
+        $.ajax({
+            type: 'GET',
+            url: 'savePreferences.php',
+            dataType: 'json',
+            success: function (data) {
+                $("span.sending_spinner").hide();
+                if (data.success) {
+                    $(".preferences_not_saved").hide();
+                    $(".preferences_saved").show().delay(5000).fadeOut(300);
+                } else {
+                    $(".preferences_saved").hide();
+                    $(".preferences_not_saved").show().delay(5000).fadeOut(300);
+                }
+            },
+            data: {
+                'access_token': FB.getAccessToken(),
+                'fb_id': FB.getUserID(),
+                'email': email,
+                'friends_per_digest': friends_per_digest,
+                'time': time,
+                'pause_duration' : pause_duration
+            },
+            async: true
+        });
+    };
+
+    $("#save").on("click", savePreferences);
+
+</script>
+<script type="text/javascript">
+  var fbInitActions = {
+    connected: function () {
+      refreshToken();
+      showSuspensionBtn();
+      var preferences = getPreferences();
+      $("#friends_per_digest option").filter(function () {
+          return $(this).text() == preferences.friends_per_digest;
+      }).prop('selected', true);
+      $("#time option").filter(function () {
+          return $(this).val() == preferences.time;
+      }).prop('selected', true);
+
+      if(preferences.pause_duration > 0) {
+          $("#pause").prop("checked", true);
+          $("#pause_duration").text(preferences.pause_duration);
+      }
+
+      $("div.loading_spinner").hide();
+      $("div.fb-login-wrapper").hide();
+      $("div.preferences").show();
+    }
+  };
+</script>

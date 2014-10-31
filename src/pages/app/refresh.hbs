@@ -1,6 +1,12 @@
 ---
 layout: src/templates/layouts/fb-app-layout.hbs
 ---
+<style type="text/css">
+  .refreshed, .loading-spinner {
+    display: none;
+  }
+</style>
+
 <section class="container" id="main">
   <header>
     <h2>Renew Facebook Connection</h2>
@@ -8,7 +14,16 @@ layout: src/templates/layouts/fb-app-layout.hbs
   <div class="box">
     {{> loading-spinner }}
     {{> fb-login-wrapper }}
-    <p>Your Facebook authorization has been renewed. Your friends' pictures and statuses should appear in future e-mails. Thanks for using Ceaseless!</p>
-    {{> fb-scripts }}
+    <p class="refreshed">Your Facebook authorization has been renewed. Your friends' pictures and statuses should appear in future e-mails. Thanks for using Ceaseless!</p>
+    <a href="default.html" class="button">Return Home</a>
+    <script type="text/javascript">
+      var fbInitActions = {
+        connected: function () {
+          refreshToken();
+          $('div.loading-spinner').hide();
+          $('div.refreshed').show();
+        }
+      };
+    </script>
   </div>
 </section>

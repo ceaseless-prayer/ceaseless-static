@@ -1,0 +1,105 @@
+---
+layout: src/templates/layouts/fb-app-layout.hbs
+---
+<style type="text/css">
+  .registration_input, .registration_confirmation, .registration_not_confirmed
+  {
+    display: none;
+  }
+</style>
+<section class="container" id="main">
+  <header>
+    <h2>Change Preferences</h2>
+  </header>
+  <div class="box">
+
+    <div class="signin_intro">
+      <h3 class="form-signin-heading">Sign up or Sign in</h3>
+      <h5>Get a daily e-mail with 3 friends to pray for. Together, we can pray for everyone on Facebook in a
+        year!</h5>
+      Click below to log in or sign up and don't worry, we won't bug your friends.
+    </div>
+
+    {{> loading-spinner }}
+    <!-- custom login wrapper that needs to support registration -->
+    <div class="fb-login-wrapper">
+      <div
+              class="fb-login-button"
+              data-show-faces="true"
+              data-width="265"
+              data-max-rows="2"
+              data-registration-url=""
+              data-onlogin="setupRegistrationUrl()"
+              data-size="large"
+              data-scope="email,user_status,friends_photos,friends_status">
+      </div>
+    </div>
+    <p>We'll grab your list of friends from Facebook to start sending you
+      friends to pray for. Your data will be saved, but we do not post back to your Facebook.</p>
+    <p>You can also <a href="index.html">Learn more</a> or <a href="contact.html">Contact us</a>.</p>
+    <div class="registration_input">
+      <label>Please enter the e-mail address you want to use to receive the Daily Prayer Digest.</label>
+      <input id="emailToUse" type="email" class="input-block-level" placeholder="Email address"/>
+      <button id="registerEmail" class="btn btn-large btn-primary" type="submit">Submit</button>
+    </div>
+    <div class="registration_confirmation">
+      <label>Thanks for registering! Check your inbox (and maybe spam) for a link to confirm your
+        account. We cannot send you friends to pray for until your account is confirmed.
+      </label>
+    </div>
+    <div class="registration_not_confirmed">
+      <label>Sorry, we couldn't register you at this time.</label>
+    </div>
+    <div class="row">
+
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  var registerEmailAndToken = function (e) {
+    e.preventDefault();
+    var email = $("#emailToUse").val();
+    $("#registerEmail").attr("disabled", true);
+    $.ajax({
+      type: 'GET',
+      url: 'registerEmail.php',
+      dataType: 'json',
+      success: function (data) {
+        if (data.success) {
+          $("div.registration_input").hide();
+          $("div.registration_confirmation label")
+                  .text("Thanks for registering! Check your " + email + " inbox (and maybe spam) for a link to confirm your account. We cannot send you friends to pray for until your account is confirmed.");
+          $("div.registration_confirmation").show();
+        } else {
+          $("div.registration_not_confirmed").show();
+        }
+        // redirect to the main dashboard
+      },
+      data: {
+        'email': email,
+        'access_token': FB.getAccessToken(),
+        'fb_id': FB.getUserID(),
+        'invitation_code': invited ? $.QueryString["invitation_code"] : ''
+      },
+      async: false
+    });
+  };
+
+  $("#registerEmail").on("click", registerEmailAndToken);
+
+  var setupRegistrationUrl = function () {
+    var delimiter = useWaitlist ? '&' : '?';
+    window.location = window.location + delimiter + "newlyRegistered=yes";
+  };
+
+</script>
+<script type="text/javascript">
+  var fbInitActions = {
+    connected: function () {
+      $("div.loading_spinner").hide();
+      $("div.signin_intro").hide();
+      $(".login-divider").hide();
+      $("div.registration_input").show();
+    }
+  };
+</script>

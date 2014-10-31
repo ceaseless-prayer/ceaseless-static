@@ -1,0 +1,42 @@
+---
+layout: src/templates/layouts/fb-app-layout.hbs
+---
+<style type="text/css">
+  #confirmed, #not-confirmed {
+    display: none;
+  }
+</style>
+
+<section class="container" id="main">
+  <header>
+    <h2>Thanks for joining Ceaseless!</h2>
+  </header>
+  <div class="box">
+    <div id="confirmed">
+      <h3>You're Confirmed!</h3>
+      <div>
+        <p>You should receive three friends to pray for tomorrow morning.</p>
+        <a href="default.html" class="button big special">OK</a>
+      </div>
+    </div>
+    <div id="not-confirmed">
+      <h3>Not Confirmed :-(</h3>
+      <div>
+        <label>Sorry, we could not confirm your registration.</label>
+        <a href="default.html" class="button big special">OK</a>
+        <a href="contact.html?subject=Trouble Confirming Account" class="button big" >Get help.</a>
+      </div>
+    </div>
+    <hr/>
+    <div>
+      <a href="default.html" class="button">Return Home</a>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  if ($.QueryString['confirmed'] === 'true') {
+    $("#confirmed").show();
+  } else {
+    $("#not-confirmed").show();
+  }
+</script>
