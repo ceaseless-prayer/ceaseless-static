@@ -63,7 +63,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
     $("span.sending_spinner").show();
     $.ajax({
       type: 'POST',
-      url: 'api/suspend.php',
+      url: '/api/suspend.php',
       dataType: 'json',
       success: function (data) {
         $("span.sending_spinner").hide();

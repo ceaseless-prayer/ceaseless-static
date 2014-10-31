@@ -68,7 +68,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
   var fbInitActions = {
     connected: function () {
       var fbIds = getFbIds();
-      $.getJSON("getFbDetailsForIds.php", { ids: fbIds }, function (response) {
+      $.getJSON("/getFbDetailsForIds.php", { ids: fbIds }, function (response) {
         var results = response.results;
         fbIds.forEach(function (id) {
           // generate a send message button for each person

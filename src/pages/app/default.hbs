@@ -61,7 +61,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
   var getPrayerProgress = function () {
     $.ajax({
       type: 'GET',
-      url: 'prayerProgress.php',
+      url: '/prayerProgress.php',
       dataType: 'json',
       success: function (data) {
         // update global friend count (TODO cache it)

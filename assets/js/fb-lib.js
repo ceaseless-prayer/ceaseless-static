@@ -3,7 +3,7 @@ var fbAppId = '114260328766572';
 var refreshToken = function () {
   $.ajax({
     type: 'GET',
-    url: 'refreshToken.php',
+    url: '/refreshToken.php',
     dataType: 'json',
     success: function (data) {
       if (data.success) {
@@ -38,7 +38,7 @@ var getPreferences = function () {
   var preferences = {};
   $.ajax({
     type: 'GET',
-    url: 'getPreferences.php',
+    url: '/getPreferences.php',
     dataType: 'json',
     success: function (data) {
       preferences = data.preferences || {};
@@ -52,7 +52,7 @@ var isRegistered = function () {
   var registered;
   $.ajax({
     type: 'GET',
-    url: 'checkRegistered.php',
+    url: '/checkRegistered.php',
     dataType: 'json',
     success: function (data) {
       registered = data.registered;

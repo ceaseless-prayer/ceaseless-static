@@ -72,7 +72,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
     $("#registerEmail").attr("disabled", true);
     $.ajax({
       type: 'GET',
-      url: 'registerEmail.php',
+      url: '/registerEmail.php',
       dataType: 'json',
       success: function (data) {
         if (data.success) {
