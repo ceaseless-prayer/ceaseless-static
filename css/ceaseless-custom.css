@@ -34,3 +34,8 @@
 .addthis-smartlayers a {
   border: none;
 }
+
+.header-logo {
+    height:2em;
+    vertical-align:middle;
+}

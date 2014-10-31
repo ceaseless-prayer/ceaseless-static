@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-  <title>Share your joy</title>
+  <title></title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <meta name="description" content=""/>
   <meta name="keywords" content=""/>
@@ -29,10 +29,9 @@
 
 </head>
 
-<body class="landing">
-<img id="header-narrow" src="images/logo-white.png"/>
+<body>
 <!-- Header -->
-<header id="header" class="alt">
+<header id="header">
   <h1><a href="index.html"><img class="logo header-logo" src="images/logo-white.png"/></a></h1>
   <nav id="nav">
     <ul>
@@ -43,18 +42,6 @@
           
           <li><a href="share.html">Share Ceaseless</a></li>
           <li><a href="request_prayer.html">Request prayer</a></li>
-
-          <!--
-          <li>
-            <a href="">Applications</a>
-            <ul>
-              <li><a href="#">For Individuals</a></li>
-              <li><a href="#">For Churches</a></li>
-              <li><a href="#">For Ministries</a></li>
-              <li><a href="#">For Missions</a></li>
-            </ul>
-          </li>
-          -->
         </ul>
       </li>
       <li><a href="default.html" class="button">Sign Up</a></li>
@@ -64,34 +51,50 @@
 </header>
 
 
-
-    <!-- Banner -->
-      <section id="banner">
-        <h2>Share the joy of praying for others</h2>
-        <p>&ldquo;Pray earnestly to the Lord of the harvest to send out laborers into his harvest.&rdquo; (Luke 10:2 ESV)</p>
-        <ul class="actions">
-          <li><a href="#main" class="button special">Invite people to pray</a></li>
-        </ul>
-      </section>
-
-		<!-- Main -->
-			<section id="main" class="container">
-				<div class="box special">
-					<h3>Invite people to pray for their friends</h3>
-          <p>Use these buttons to share Ceaseless</p>
-          <div class="infographic">
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox" data-url="http://www.ceaselessprayer.com" data-title="An Invitation to Joy."></div>
-
-            <br/>
-            <span class="image fit"><img src="images/ceaseless_fb_infographic_en.jpg" alt="" /></span>
-          </div>
-				</div>
-			</section>
-
-      <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c02b027104c561"></script>
-
+<!-- Main -->
+<section id="main" class="container small">
+  <header>
+    <h2>Contact Us</h2>
+    <p>Use the form below to reach us with questions, feedback, or anything else.
+      <br/>
+      Don't worry we won't use your e-mail for any nefarious purposes &#9786;.
+    </p>
+  </header>
+  <div class="box">
+    <form method="post" action="#">
+      <div class="row uniform half collapse-at-2">
+        <div class="6u">
+          <input type="text" name="name" id="name" value="" placeholder="Name" />
+        </div>
+        <div class="6u">
+          <input type="email" name="email" id="email" value="" placeholder="Email" />
+        </div>
+      </div>
+      <div class="row uniform half">
+        <div class="12u">
+          <input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+        </div>
+      </div>
+      <div class="row uniform half">
+        <div class="12u">
+          <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+        </div>
+      </div>
+      <div class="row uniform">
+        <div class="12u">
+          <ul class="actions align-center">
+            <li><input type="submit" value="Send Message" /></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<script>
+  if ($.QueryString["subject"]) {
+    $("#subject").val($.QueryString["subject"]);
+  }
+</script>
 
 
 <!-- Footer -->
