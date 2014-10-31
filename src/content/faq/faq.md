@@ -7,7 +7,7 @@ You're busy and it's hard to remember to pray for others. Prayer lists grow so l
 Ceaseless helps you overcome these problems by giving you something to look forward to each morning: a short list of people to pray for and their latest Facebook statuses. By helping you regularly pray for others over the long term, you can experience the joy of seeing God bless others as you have asked Him to.
 
 ## How do I use it?
-All you need to do is [sign up](http://www.ceaselessprayer.com). At around 5am the next day you should receive an e-mail with a Scripture related to prayer and 3 friends to pray for. It takes less than 60 seconds to get set up.
+All you need to do is [sign up](register.html). At around 5am the next day you should receive an e-mail with a Scripture related to prayer and 3 friends to pray for. It takes less than 60 seconds to get set up.
 
 ## Does it require Facebook?
 Yes for now Ceaseless requires a Facebook account since that is how it knows about your friends. We'd like to enable you to join without Facebook, but don&rsquo;t have the resources to build that capability yet.

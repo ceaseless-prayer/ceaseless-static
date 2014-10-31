@@ -104,9 +104,13 @@ layout: src/templates/layouts/fb-app-layout.hbs
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
-      $("div.loading-spinner").hide();
-      $("div.signup_intro").hide();
-      $("div.registration_input").show();
+      if (!isRegistered()) {
+        $("div.loading-spinner").hide();
+        $("div.signup_intro").hide();
+        $("div.registration_input").show();
+      } else {
+        window.location = "default.html";
+      }
     }
   };
 </script>
