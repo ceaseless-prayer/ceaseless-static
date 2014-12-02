@@ -105,11 +105,7 @@
             </div>
             <div class="3u">
               <input id="registerEmail" class="fit" value="Submit" type="submit"/>
-              <div class="loading-spinner">
-  <img src="images/spinner.gif"/>
-</div>
-
-
+              <img id="register-spinner" src="images/spinner.gif"/>
             </div>
           </div>
         </div>
@@ -132,14 +128,14 @@
   var registerEmailAndToken = function (e) {
     e.preventDefault();
     var email = $("#emailToUse").val();
-    $("div.loading-spinner").show();
+    $("div.register-spinner").show();
     $("#registerEmail").attr("disabled", true);
     $.ajax({
       type: 'GET',
       url: '/registerEmail.php',
       dataType: 'json',
       success: function (data) {
-        $("div.loading-spinner").hide();
+        $("div.register-spinner").hide();
         if (data.success) {
           $("div.registration_input").hide();
           $("#chosen_email").text(email);
