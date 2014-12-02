@@ -23,7 +23,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
         Thank you for joining us in praying for everyone on earth.
       </p>
       <button id="suspend_account_btn" class="button big special">Suspend account</button>
-      <a href="preferences.html" class="button big">Cancel</a>
+      <a class="cancel_btn" href="preferences.html" class="button big">Cancel</a>
       <div class="sending_spinner">
         <img src="images/spinner.gif"/>
       </div>
@@ -35,6 +35,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
                   frameborder="0" marginheight="0" marginwidth="0">Loading...
           </iframe>
         </div>
+        <a class="button big special" href="default.html">Return home.</a>
       </div>
       <div class="account_not_suspended">
         <label>Sorry, we couldn't suspend your account at this time. <a href="contact.html">Contact
@@ -49,7 +50,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
         Thank you for joining us in praying for everyone on earth.
       </p>
       <button id="enable_account_btn" class="button big special">Enable account</button>
-      <a href="preferences.html" class="button big">Cancel</a>
+      <a class="cancel_btn" href="preferences.html" class="button big">Cancel</a>
       <div class="sending_spinner">
         <img src="images/spinner.gif"/>
       </div>
@@ -74,6 +75,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
             $(".account_not_suspended").hide();
             $(".account_suspended").show();
             $("#suspend_account_btn").hide();
+            $(".cancel_btn").hide();
             $("#feedback_form").show();
           } else {
             $(".account_suspended").hide();
