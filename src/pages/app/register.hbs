@@ -86,8 +86,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
       data: {
         'email': email,
         'access_token': FB.getAccessToken(),
-        'fb_id': FB.getUserID(),
-        'invitation_code': invited ? $.QueryString["invitation_code"] : ''
+        'fb_id': FB.getUserID()
       },
       async: false
     });
@@ -96,8 +95,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
   $("#registerEmail").on("click", registerEmailAndToken);
 
   var setupRegistrationUrl = function () {
-    var delimiter = useWaitlist ? '&' : '?';
-    window.location = window.location + delimiter + "newlyRegistered=yes";
+    window.location = window.location + "?newlyRegistered=yes";
   };
 
 </script>
