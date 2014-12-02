@@ -30,7 +30,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
         <div>
           <h3>Actions</h3>
           <ul>
-            <li><a href="invite.html"><span class="icon fa-user"></span> &nbsp; Invite Others</a></li>
+            <li><a href="share.html"><span class="icon fa-user"></span> &nbsp; Invite Others</a></li>
             <li><a href="preferences.html"><span class="icon fa-wrench"></span> &nbsp; Change Preferences</a></li>
             <li><a href="donate.html"><span class="icon fa-thumbs-up"></span> &nbsp; Support Ceaseless</a></li>
             <li><a href="contact.html"><span class="icon fa-question"></span> &nbsp; Give Feedback or Get Help</a></li>
@@ -48,8 +48,6 @@ layout: src/templates/layouts/fb-app-layout.hbs
                 data-show-faces="true"
                 data-width="265"
                 data-max-rows="2"
-                data-registration-url=""
-                data-onlogin="setupRegistrationUrl()"
                 data-size="large"
                 data-scope="email,user_status,friends_photos,friends_status">
         </div>
@@ -82,7 +80,6 @@ layout: src/templates/layouts/fb-app-layout.hbs
     connected: function () {
       $("div.loading-spinner").hide();
       $("div.fb-login-wrapper").show();
-      $("div.signin_intro").hide();
       $("div.prayer_progress").show();
       getPrayerProgress();
     }
