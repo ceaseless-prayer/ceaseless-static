@@ -121,7 +121,7 @@
         <div class="12u">
           <!-- TODO Skipping dealing with the timezone problem for now -->
           <label for="pause">Do you need a break?</label>
-          <input type="checkbox" id="pause"/><label for="pause">Take a 7 day break</label>
+          <input type="checkbox" id="pause"/><label for="pause">Take a <span id="pause_duration">7</span> day break</label>
         </div>
       </div>
       <hr/>
@@ -232,7 +232,7 @@
           $("#pause_duration").text(preferences.pause_duration);
       }
 
-      $("div.loading_spinner").hide();
+      $("div.loading-spinner").hide();
       $("div.fb-login-wrapper").hide();
       $("div.preferences").show();
     }
