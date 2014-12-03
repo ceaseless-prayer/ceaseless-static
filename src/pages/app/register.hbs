@@ -70,14 +70,14 @@ layout: src/templates/layouts/fb-app-layout.hbs
   var registerEmailAndToken = function (e) {
     e.preventDefault();
     var email = $("#emailToUse").val();
-    $("div.register-spinner").show();
+    $("#register-spinner").show();
     $("#registerEmail").attr("disabled", true);
     $.ajax({
       type: 'GET',
       url: '/registerEmail.php',
       dataType: 'json',
       success: function (data) {
-        $("div.register-spinner").hide();
+        $("#register-spinner").hide();
         if (data.success) {
           $("div.registration_input").hide();
           $("#chosen_email").text(email);

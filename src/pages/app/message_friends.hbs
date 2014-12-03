@@ -12,12 +12,8 @@ layout: src/templates/layouts/fb-app-layout.hbs
     <div class="row">
       <div class="12u">
         <h3>Message friends you prayed for:</h3>
-        <ul id="friends-to-message" class="nav nav-list friend-list">
+        <ul id="friends-to-message" class="alt friend-list">
         </ul>
-
-        <div class="sending_spinner">
-          <img src="assets/img/spinner.gif"/>
-        </div>
       </div>
     </div>
     <div class="row">
@@ -67,6 +63,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
+      $('div.fb-login-wrapper').hide();
       var fbIds = getFbIds();
       $.getJSON("/getFbDetailsForIds.php", { ids: fbIds }, function (response) {
         var results = response.results;
@@ -78,7 +75,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
           tmpl.find("a").append("<td>Message " + name + "</td>");
           tmpl.appendTo("#friends-to-message");
         });
-        $("div.loading_spinner").hide();
+        $("div.loading-spinner").hide();
       });
     }
   };

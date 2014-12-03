@@ -21,7 +21,8 @@ layout: src/templates/layouts/fb-app-layout.hbs
         connected: function () {
           refreshToken();
           $('div.loading-spinner').hide();
-          $('div.refreshed').show();
+          $('div.fb-login-wrapper').hide();
+          $('p.refreshed').show();
         },
         not_authorized: function () {
           $('div.loading-spinner').hide();
