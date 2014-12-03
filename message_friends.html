@@ -80,12 +80,8 @@
     <div class="row">
       <div class="12u">
         <h3>Message friends you prayed for:</h3>
-        <ul id="friends-to-message" class="nav nav-list friend-list">
+        <ul id="friends-to-message" class="alt friend-list">
         </ul>
-
-        <div class="sending_spinner">
-          <img src="assets/img/spinner.gif"/>
-        </div>
       </div>
     </div>
     <div class="row">
@@ -135,18 +131,19 @@
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
+      $('div.fb-login-wrapper').hide();
       var fbIds = getFbIds();
       $.getJSON("/getFbDetailsForIds.php", { ids: fbIds }, function (response) {
         var results = response.results;
         fbIds.forEach(function (id) {
           // generate a send message button for each person
-          var tmpl = $("<li><a href='javascript:sendMessage(\"" + id + "\")'><table><tr>");
-          tmpl.find("a").append("<td><img src='" + results[id].profilePic + "'/></td>");
+          var tmpl = $("<li><a href='javascript:sendMessage(\"" + id + "\")'>");
+          tmpl.find("a").append("<img src='" + results[id].profilePic + "'/><br/>");
           var name = results[id].name.first_name + " " + results[id].name.last_name;
-          tmpl.find("a").append("<td>Message " + name + "</td>");
+          tmpl.find("a").append("Message " + name);
           tmpl.appendTo("#friends-to-message");
         });
-        $("div.loading_spinner").hide();
+        $("div.loading-spinner").hide();
       });
     }
   };
