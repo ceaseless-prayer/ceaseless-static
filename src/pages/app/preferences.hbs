@@ -15,7 +15,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
   <div class="box">
     {{> loading-spinner }}
     {{> fb-login-wrapper }}
-    <form>
+    <form class="preferences">
       <div class="row">
         <div class="6u">
           <label for="friends_per_digest">How many friends do you want to pray for each day?</label>
@@ -166,7 +166,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
 
       $("div.loading-spinner").hide();
       $("div.fb-login-wrapper").hide();
-      $("div.preferences").show();
+      $(".preferences").show();
     }
   };
 </script>
