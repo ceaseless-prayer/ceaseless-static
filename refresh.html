@@ -78,7 +78,7 @@
     data-width="300"
     data-max-rows="2"
     data-size="large"
-    data-scope="email,user_status,friends_likes,friends_photos,friends_status">
+    data-scope="email,user_status,friends_photos,friends_status">
   </div>
 </div>
 
@@ -89,7 +89,11 @@
         connected: function () {
           refreshToken();
           $('div.loading-spinner').hide();
+          $('div.fb-login-wrapper').hide();
           $('div.refreshed').show();
+        },
+        not_authorized: function () {
+          $('div.loading-spinner').hide();
         }
       };
     </script>
