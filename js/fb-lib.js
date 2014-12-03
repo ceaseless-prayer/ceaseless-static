@@ -25,7 +25,7 @@ var authenticate = function (response) {
     if (response.status === 'connected') {
       fbInitActions.connected();
     } else if (response.status === 'not_authorized') {
-      window.location = '/';
+      window.location = '/index.html';
     } else {
       FB.Event.subscribe('auth.authResponseChange', authenticate);
       $('div.loading-spinner').hide();
