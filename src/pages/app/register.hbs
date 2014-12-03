@@ -25,7 +25,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
                     data-show-faces="true"
                     data-width="265"
                     data-max-rows="2"
-                    data-registration-url=""
+                    data-registration-url="register.html"
                     data-onlogin=""
                     data-size="large"
                     data-scope="email,user_status,friends_photos,friends_status">
@@ -108,6 +108,9 @@ layout: src/templates/layouts/fb-app-layout.hbs
       } else {
         window.location = "default.html";
       }
+    },
+    not_authorized: function () {
+      $("div.loading-spinner").hide();
     }
   };
 </script>
