@@ -2,7 +2,7 @@
 layout: src/templates/layouts/fb-app-layout.hbs
 ---
 <style type="text/css">
-  .registration_input, .registration_confirmation, .registration_not_confirmed
+  .registration_input, .registration_confirmation, .registration_not_confirmed, #register-spinner
   {
     display: none;
   }
@@ -25,8 +25,8 @@ layout: src/templates/layouts/fb-app-layout.hbs
                     data-show-faces="true"
                     data-width="265"
                     data-max-rows="2"
-                    data-registration-url="register.html"
-                    data-onlogin=""
+                    data-registration-url=""
+                    data-onlogin="setupRegistrationUrl()"
                     data-size="large"
                     data-scope="email,user_status,friends_photos,friends_status">
             </div>
@@ -96,6 +96,9 @@ layout: src/templates/layouts/fb-app-layout.hbs
   };
 
   $("#registerEmail").on("click", registerEmailAndToken);
+  var setupRegistrationUrl = function () {
+    FB.getLoginStatus(authenticate);
+  };
 
 </script>
 <script type="text/javascript">
