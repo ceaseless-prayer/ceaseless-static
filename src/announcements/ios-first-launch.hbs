@@ -1,0 +1,38 @@
+---
+layout: src/templates/layouts/announcement.hbs
+title: Ceaseless is on iOS!
+headline: Ceaseless is on iOS!
+subhead: New native iOS experience means you get friends to pray for who aren't on Facebook.
+cta-main: Find out what's new
+cta1: Send feedback
+share: Share Ceaseless
+---
+<!-- Banner -->
+<section id="banner">
+  <h2>{{ headline }}</h2>
+  <p>{{ subhead }}</p>
+  <ul class="actions">
+    <li><a href="#main" class="button special">{{ cta-main }}</a></li>
+  </ul>
+</section>
+
+<!-- Main -->
+<section id="main" class="container">
+
+  <section id="content" class="container">
+    <section class="box">
+      <h2>Ceaseless is now available for iOS8 devices!</h2>
+      It uses your address book to surface friends to pray for each day. Here are some features to try:
+      <ul>
+        <li><strong>Address book sync.</strong> Ceaseless automatically syncs with your address book so new friends become a part of your prayer life. It intelligently chooses only people (instead of businesses) and you can remove contacts from Ceaseless if it makes a mistake.</li>
+        <li><strong>Favorite friends.</strong> Pray for people in your inner circle or those in urgent need more regularly by favoriting them. Ceaseless will ensure they stay at the forefront.</li>
+        <li><strong>Notes.</strong> Take notes about your conversations with people, how they've asked you to pray for them, or how God has answered your prayers for them. The next time they appear, you'll have the joy of remembering how to pray and seeing God's past faithfulness. And you'll have a good reason to personally reconnect with them.</li>
+      </ul>
+      Thanks for using Ceaseless! We'd love to hear from you.
+      <br/><br/>
+      <a href="contact.html" class="button">{{ cta1 }}</a>
+    </section>
+  </section>
+</section>
+
+{{> addthis-scripts }}

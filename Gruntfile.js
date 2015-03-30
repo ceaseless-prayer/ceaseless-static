@@ -36,7 +36,7 @@ module.exports = function(grunt) {
     },
     watch: {
       assemble: {
-        files: ['<%= config.src %>/{content,pages,data,templates}/**/*.{md,hbs,yml}'],
+        files: ['<%= config.src %>/{content,pages,announcements,data,templates}/**/*.{md,hbs,yml}'],
         tasks: ['assemble']
       },
       assets: {
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= config.dist %>/': ['<%= config.src %>/pages/**/*.hbs',
-          '<%= config.src %>/content/events/**/*.hbs']
+                                  '<%= config.src %>/announcements/**/*.hbs']
         }
       }
     },
