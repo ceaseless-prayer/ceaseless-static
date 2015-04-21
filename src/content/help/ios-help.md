@@ -28,6 +28,9 @@ To remove contacts from Ceaseless, tap on the Menu, then People. Tap the "Edit" 
 ## How do I add people to pray for?
 Tap on the book to go to your prayer journal and tap the "+" sign to add a note. Then tap "Tag friends" and search for your friend's name. If they are not already in your contacts book, tap "Add new contact", fill in the necessary information and tap "Done". A new contact will be created and you can then add notes on how to pray for them. Alternatively you can add the contact directly to your address book.
 
+## What do I do about duplicate contacts?
+There are two ways to deal with duplicate contacts, you can remove all versions of the contact except one. Or you can link contacts in your address book by opening the Contacts app, finding one of the contacts you want to merge, tapping Edit, scrolling to the bottom section titled LINKED CONTACTS. Tap the + link contacts button and find the other contacts and link them. Open Ceaseless and it will have merged the contacts and their information as well.
+
 ## How do I sync my address book with Facebook?
 If you have a Facebook account, you can synchronize your address book with Facebook friends by going to your device Settings. Then tap on the Facebook settings section. If you allowed Contacts to use the Facebook app, you should see an "Update All Contacts" button at the bottom. Tap that and your Contacts app will synchronize with your Facebook friends information.
 
