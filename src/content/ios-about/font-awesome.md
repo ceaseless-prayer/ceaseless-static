@@ -1,9 +1,9 @@
-Font Awesome by Dave Gandy - http://fontawesome.io
+###Font Awesome by Dave Gandy - http://fontawesome.io
 
 The Font Awesome font is licensed under the SIL OFL 1.1:
 http://scripts.sil.org/OFL
 
-SIL OPEN FONT LICENSE
+###SIL OPEN FONT LICENSE
 
 Version 1.1 - 26 February 2007
 

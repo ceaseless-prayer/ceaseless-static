@@ -2,8 +2,7 @@
 layout: src/templates/layouts/announcement.hbs
 title: About
 headline: About
-subhead: Ceaseless contributors, licenses, etc.
-cta-main: Answer my questions
+subhead: Ceaseless contributors, services, licenses, etc.
 menuItems:
 - label:
     Contact Us
@@ -14,17 +13,20 @@ menuItems:
 <section id="banner">
   <h2>{{ headline }}</h2>
   <p>{{ subhead }}</p>
-  <ul class="actions">
-    <li><a href="#main" class="button special">{{ cta-main }}</a></li>
-  </ul>
 </section>
 
 <!-- Main -->
 <section id="main" class="container">
-
   <section id="content" class="container">
     <section class="box">
-      {{md "src/content/help/ios-help.md" }}
+      {{md "src/content/ios-about/contributors.md" }}
+      {{md "src/content/ios-about/dbp.md" }}
+      {{md "src/content/ios-about/privacy.md" }}
+      <h2>Licenses</h2>
+      <p>Some software, fonts and other assets in Ceaseless are covered by the following licenses.</p>
+      {{md "src/content/ios-about/font-awesome.md" }}
+      {{md "src/content/ios-about/mit.md" }}
+      {{md "src/content/ios-about/apache2.md" }}
     </section>
   </section>
 </section>

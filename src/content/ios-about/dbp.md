@@ -1,2 +1,2 @@
-Scriptures provided by the Digital Bible Platform.
+Scriptures provided by the Digital Bible Platform:
 http://www.digitalbibleplatform.com/
