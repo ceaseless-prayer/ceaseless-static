@@ -1,0 +1,30 @@
+---
+layout: src/templates/layouts/announcement.hbs
+title: About
+headline: About
+subhead: Ceaseless contributors, licenses, etc.
+cta-main: Answer my questions
+menuItems:
+- label:
+    Contact Us
+  url:
+    mailto:ceaseless@theotech.org?subject=Ceaseless%20iOS%20Help
+---
+<!-- Banner -->
+<section id="banner">
+  <h2>{{ headline }}</h2>
+  <p>{{ subhead }}</p>
+  <ul class="actions">
+    <li><a href="#main" class="button special">{{ cta-main }}</a></li>
+  </ul>
+</section>
+
+<!-- Main -->
+<section id="main" class="container">
+
+  <section id="content" class="container">
+    <section class="box">
+      {{md "src/content/help/ios-help.md" }}
+    </section>
+  </section>
+</section>
