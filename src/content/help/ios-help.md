@@ -34,5 +34,8 @@ There are two ways to deal with duplicate contacts, you can remove all versions 
 ## How do I sync my address book with Facebook?
 If you have a Facebook account, you can synchronize your address book with Facebook friends by going to your device Settings. Then tap on the Facebook settings section. If you allowed Contacts to use the Facebook app, you should see an "Update All Contacts" button at the bottom. Tap that and your Contacts app will synchronize with your Facebook friends information.
 
+## Why don't I see any people to pray for?
+Ceaseless requires permission to access your local device's address book. If you did not give the app permission, it may not have been able to show you any people to pray for. First, ensure your address books has contacts in it. Next, ensure Ceaseless has access to your device's contacts by going to Settings, Privacy,  Contacts, and ensuring the switch for Ceaseless is set to on.
+
 ## What does Ceaseless do with my data?
 All of your data stays on your device. If your device is backed up to iCloud then the Ceaseless application data may be included in that backup. The Ceaseless app itself does not store your contacts or notes in the cloud or share it with anyone.
