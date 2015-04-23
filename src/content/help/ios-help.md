@@ -39,3 +39,6 @@ Ceaseless requires permission to access your local device's address book. If you
 
 ## What does Ceaseless do with my data?
 All of your data stays on your device. If your device is backed up to iCloud then the Ceaseless application data may be included in that backup. The Ceaseless app itself does not store your contacts or notes in the cloud or share it with anyone.
+
+## What if my question is not answered here?
+[Contact us](contact.html).
