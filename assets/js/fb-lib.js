@@ -1,6 +1,7 @@
 var fbAppId = '114260328766572';
 
 var refreshToken = function () {
+  var authResponse = FB.getAuthResponse();
   $.ajax({
     type: 'GET',
     url: '/refreshToken.php',
@@ -13,11 +14,15 @@ var refreshToken = function () {
       }
     },
     data: {
-      'access_token': FB.getAccessToken(),
-      'fb_id': FB.getUserID()
+      'access_token': authResponse.accessToken,
+      'fb_id': authResponse.userID
     },
     async: true
   });
+};
+
+var checkLoginState = function () {
+  FB.getLoginStatus(authenticate);
 };
 
 var authenticate = function (response) {
@@ -73,7 +78,8 @@ window.fbAsyncInit = function () {
     appId: fbAppId,        // App ID
     status: true,           // check login status
     cookie: true,           // enable cookies to allow the server to access the session
-    xfbml: true            // parse page for xfbml or html5 social plugins like login button below
+    xfbml: true,            // parse page for xfbml or html5 social plugins like login button below
+    version: 'v2.3'        // we need to specify the SDK version now
   });
   FB.getLoginStatus(authenticate);
 };

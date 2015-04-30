@@ -1,10 +1,4 @@
 <div class="fb-login-wrapper">
-  <div
-    class="fb-login-button"
-    data-show-faces="false"
-    data-width="300"
-    data-max-rows="2"
-    data-size="large"
-    data-scope="email,user_status,friends_photos,friends_status">
-  </div>
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  </fb:login-button>
 </div>

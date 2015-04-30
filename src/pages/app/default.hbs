@@ -42,15 +42,10 @@ layout: src/templates/layouts/fb-app-layout.hbs
     <div class="row">
       {{> loading-spinner }}
       <!-- custom login wrapper that needs to support registration -->
+
       <div class="fb-login-wrapper">
-        <div
-                class="fb-login-button"
-                data-show-faces="true"
-                data-width="265"
-                data-max-rows="2"
-                data-size="large"
-                data-scope="email,user_status,friends_photos,friends_status">
-        </div>
+        <fb:login-button scope="public_profile,email" width="265" show-faces="true" max-rows="2" size="large" onlogin="checkLoginState();">
+        </fb:login-button>
       </div>
     </div>
   </div>
