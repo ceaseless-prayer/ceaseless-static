@@ -121,15 +121,10 @@
 
 
       <!-- custom login wrapper that needs to support registration -->
+
       <div class="fb-login-wrapper">
-        <div
-                class="fb-login-button"
-                data-show-faces="true"
-                data-width="265"
-                data-max-rows="2"
-                data-size="large"
-                data-scope="email,user_status,friends_photos,friends_status">
-        </div>
+        <fb:login-button scope="public_profile,email" width="265" show-faces="true" max-rows="2" size="large" onlogin="checkLoginState();">
+        </fb:login-button>
       </div>
     </div>
   </div>
@@ -185,13 +180,13 @@
 
 <script type="text/javascript">
     // Load the SDK Asynchronously
-    (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        ref.parentNode.insertBefore(js, ref);
-    }(document));
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
 </script>
 <script type="text/javascript" src="js/fb-lib.js"></script>
 
