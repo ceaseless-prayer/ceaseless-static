@@ -20,6 +20,7 @@
 
 	#banner {
 		background-attachment: scroll;
+    background-image:url("../images/background-narrow-1.jpg");
 	}
 
 		#banner h2 {
