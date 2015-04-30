@@ -71,7 +71,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
           // generate a send message button for each person
           var tmpl = $("<li><a href='javascript:sendMessage(\"" + id + "\")'>");
           tmpl.find("a").append("<img src='" + results[id].profilePic + "'/><br/>");
-          var name = results[id].name.first_name + " " + results[id].name.last_name;
+          var name = results[id].name;
           tmpl.find("a").append("Message " + name);
           tmpl.appendTo("#friends-to-message");
         });
