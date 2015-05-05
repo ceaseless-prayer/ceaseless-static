@@ -11,6 +11,14 @@
   <meta name="description" content=""/>
   <meta name="keywords" content=""/>
 
+  <meta property="og:title" content="Ceaseless - An Invitation to Joy" />
+<meta property="og:type" content="company" />
+<meta property="og:site_name" content="Ceaseless - An Invitation to Joy" />
+<meta property="og:description" content="<p>Praying for others shouldn’t feel like a to-do list. Ceaseless helps you experience the joy of prayer by showing you a Scripture and three people to pray for each day. Together we can pray for everyone on earth.</p><p>Learn more at <a href='http://www.ceaselessprayer.com'>www.ceaselessprayer.com</a></p>" />
+<meta property="og:url" content="www.ceaselessprayer.com" />
+<meta property="og:image" content="http://www.ceaselessprayer.com/images/iphone/appicon_rounded.png" />
+
+
   <!-- favicon configuration -->
   <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
@@ -40,11 +48,13 @@
     <script src="js/init.js"></script>
     <script src="js/contact-form.js"></script>
     <script src="js/jquery.qs.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
     <noscript>
       <link rel="stylesheet" href="css/skel.css" />
       <link rel="stylesheet" href="css/style.css" />
       <link rel="stylesheet" href="css/style-wide.css" />
     </noscript>
+    <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/ceaseless-custom.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 
@@ -131,30 +141,41 @@
 
         </section>
 
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $('.feature-gallery').magnificPopup({
+              delegate: 'a', // the selector for gallery item
+              type: 'image',
+              gallery: {
+                enabled:true
+              }
+            });
+          });
+        </script>
+
         <section id="features" class="box special features">
   <div class="features-row">
     <section>
       <span class="icon major fa-bolt accent5"></span>
       <h3>Simple</h3>
-      <p>We make it easy to remember to pray for others by giving you one place to gather everyone* and everything you want to pray for and intelligently surfacing a few to pray for each day.</p>
-      <h6>*Currently only Facebook is supported.</h6>
+      <p>Ceaseless makes it easy to remember to pray for others by giving you one place to gather everyone and everything you want to pray for and surfacing a few to pray for each day.</p>
     </section>
     <section>
       <span class="icon major fa-picture-o accent3"></span>
       <h3>Inviting</h3>
-      <p>Prayer shouldn&#39;t feel like a to-do list. Ceaseless keeps everything short and sweet so that you don&#39;t feel overwhelmed and can come to God as you are.</p>
+      <p>Ceaseless keeps everything short and sweet so that you don&#39;t feel overwhelmed and can come to God as you are.</p>
     </section>
   </div>
   <div class="features-row">
     <section>
       <span class="icon major fa-university accent4"></span>
       <h3>Disciplined</h3>
-      <p>It&#39;s easy to commit to prayer, but hard to do so in practice. Track your prayer commitments with Ceaseless so it can help you fulfill what you already want and promised to do.</p>
+      <p>It&#39;s easy to commit to pray, but often harder to follow through. Track your commitments with Ceaseless. Let it help you fulfill what you already want and promised to do. Ceaseless also sends a daily notification to remind you to pray.</p>
     </section>
     <section>
       <span class="icon major fa-heart accent2"></span>
       <h3>Enjoyable</h3>
-      <p>Jesus said we would experience joy by asking and receiving in his name (John 16:24). Ceaseless helps you ask God for all the breadth and depth that he invites you to so you can experience the fullness of joy he promised.</p>
+      <p>Jesus said we would experience joy by asking and receiving in his name (John 16:24). Ceaseless helps you ask God for all the breadth and depth that he invites you to so you can experience the fullness of joy he promised. You can write out prayers in a journal and take notes so that you can remember your requests and His answers.</p>
     </section>
   </div>
   <br/>
@@ -163,38 +184,80 @@
   <li><a href="share.html" class="button">Share Ceaseless</a></li>
 </ul>
 
-</section>
-
-
-        <!-- <div class="row">
-    <div class="6u">
-
-      <section class="box special">
-        <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-        <h3>For Churches &amp; Ministries</h3>
-        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-        <ul class="actions">
-          <li><a href="#" class="button alt">Learn More</a></li>
-        </ul>
-      </section>
-
-    </div>
-    <div class="6u">
-
-      <section class="box special">
-        <span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-        <h3>For Individuals</h3>
-        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-        <ul class="actions">
-          <li><a href="#" class="button alt">Learn More</a></li>
-        </ul>
-      </section>
-
+  <div class="feature-gallery row uniform">
+    <div class="12u">
+    <a href="images/iphone/Screenshot1-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot1-200x356.png"/></a>
+    <a href="images/iphone/Screenshot2-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot2-200x356.png"/></a>
+    <a href="images/iphone/Screenshot3-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot3-200x356.png"/></a>
+    <a href="images/iphone/Screenshot4-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot4-200x356.png"/></a>
+    <a href="images/iphone/Screenshot5-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot5-200x356.png"/></a>
     </div>
   </div>
+</section>
 
-<p></section></p>
- -->
+        <!--<section id="download" class="box">
+  <span class="image left">
+    <img src="images/iphone/appicon_rounded.png"/><br/>
+  </span>
+  <header>
+  <h3>Ceaseless for iPhone, iPad and iPod touch</h3>
+  <p>Free in the App Store.</p>
+  </header>
+  <span>
+  <a href="#">
+    <img class="fit" style="vertical-align: middle" src="images/appstore/Download_on_the_App_Store_Badge_US-UK_135x40.svg"/>
+  </a>
+  &nbsp;
+  <a href="android_waitlist.html" style="border-radius:6px;" class="button">I want Ceaseless for Android</a> 
+  </span>
+</section>
+
+-->
+
+        <section id="subscribe" class="box">
+          <h2>Stay up to date</h2>
+          <p>Sign up below to get the Ceaseless newsletter with news, tips and more (normally 1-2 emails a month).</p>
+                    <!-- Begin MailChimp Signup Form -->
+          <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+          <style type="text/css">
+            #mc_embed_signup{background:#fff; clear:left; font:14px 'Source Sans Pro', sans-serif; }
+            .mc-field-group label {
+              font-family:'Source Sans Pro', sans-serif;;
+            }
+            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+          </style>
+          <div id="mc_embed_signup">
+          <form action="//meritandgrace.us3.list-manage.com/subscribe/post?u=ecb861ac6bb9ee973c13b5e2b&amp;id=c937500597" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+          <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+          </label>
+            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+          </div>
+          <div class="mc-field-group">
+            <label for="mce-FNAME">First Name </label>
+            <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+          </div>
+          <div class="mc-field-group">
+            <label for="mce-LNAME">Last Name </label>
+            <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+          </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_ecb861ac6bb9ee973c13b5e2b_c937500597" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Sign Up Now" name="subscribe" id="mc-embedded-subscribe" class="button special"></div>
+              </div>
+          </form>
+        </div>
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+       <!--End mc_embed_signup-->
+
+        </section>
 
         <section id="letter" class="container">
           <section class="box">
@@ -208,8 +271,7 @@ I’ll be the first to admit that I can be pretty selfish. Prayer isn’t someth
 <p>And instead of praying for everyone in general, I could specifically pray for a few friends each day, which would eventually lead me to pray for everyone, including friends who would never ordinarily ask me to.</p>
 <p>I spent a few weekends building an app that integrated with Facebook and sent me an e-mail with several friends to pray for each day. After spending some time using it, I was surprised at how easy and helpful it was. Every morning, I would look forward to discovering who to pray for that day. In a couple of cases I even felt prompted to reconnect with friends I had not spoken to in awhile.</p>
 <h3 id="is-it-useful-">Is it useful?</h3>
-<p>Although the product was just a prototype, I dubbed it Ceaseless and shared it with my friends to see if it could help them too.</p>
-<p>I got mixed reviews. Some told me they didn’t need it because they had their own prayer systems. Others said they wanted to know more details on how to pray for people. However, many said they loved its simplicity, how it strengthened their prayer lives and gave them joy in focusing on others in prayer. There were many uncanny stories where Ceaseless surfaced someone to pray for at precisely the time they felt like they needed it without them asking for it.</p>
+<p>I named the product Ceaseless and shared it with my friends to see if it could help them too. </p>
 <p>After about 6 months of praying for friends, I discovered that with 70 users we had prayed for over 20,000 people. Mind blown. </p>
 <p>I did a bit of math to see how high this number could practically go.</p>
 <p>Assuming everyone had completely unique friends (<a href="http://www.ceaselessprayer.com/assets/downloads/ceaseless-required-size-estimate-v1.pdf">math stuff here</a>), 10 million Christians could pray for the 1.3 billion people on Facebook in less than 2 months. How? 3 friends a day. Beyond that, it isn’t hard to see that if we can do this for the 1.3 billion people on Facebook, we could also pray for the 7.2 billion people on earth.</p>
@@ -218,14 +280,10 @@ I’ll be the first to admit that I can be pretty selfish. Prayer isn’t someth
 <p>I’m excited to find out. You can too.</p>
 <h3 id="how-">How:</h3>
 <h4 id="__step-1-pray-for-3-friends-a-day__"><strong>Step 1: Pray for 3 friends a day</strong></h4>
-<p>Anyone with a Facebook account can sign up for Ceaseless to get 3 friends a day. Other social network integrations are in progress. Without you, a lot of your Facebook friends may not be prayed for. But it’s more than just a responsibility—I’ve found praying for others to be a refreshing source of joy and love as well.</p>
+<p>Download Ceaseless for iPhone or iPad and start praying for 3 friends each day! Without you, a lot of your friends may not be prayed for. But it’s more than just a responsibility—I’ve found praying for others to be a refreshing source of joy and love as well. (add your name to <strong><a href="android_waitlist.html">this list</a></strong> if you need Android. Use <strong><a href="#cta">this form</a></strong> if you need something else).</p>
 <h4 id="__step-2-share-your-joy__"><strong>Step 2: Share your joy</strong></h4>
-<p>If after using Ceaseless you’ve experienced more joy in God, the next step is to <strong><a href="share.html">share it and invite others to join</a></strong>. As your friends pray for 3 friends a day, you show up as well and get notified that others have been asked to pray for you. The more friends that sign up, the more often you are remembered in prayer, the more joy is shared.</p>
-<h4 id="__step-3-share-your-relationships__"><strong>Step 3: Share your relationships</strong></h4>
-<p>If God wants us to pray for everyone on earth, we need to look beyond just Facebook and partner with existing communities, institutions and social networks that have relationships with everyone on earth. </p>
-<p>Do you want to help your community to pray for others? </p>
-<p>If you are part of a church or ministry, Ceaseless can help your leaders pray for the people under your care so that no one is forgotten. It can help rally prayer support in the wider Christian community to ensure the people you serve, Christian or not, are being personally remembered before God. If you would like to help believers personally pray for everyone on earth, get <a href="#cta">in touch with me</a>.</p>
-<h4 id="__step-4-going-above-and-beyond__"><strong>Step 4: Going above and beyond</strong></h4>
+<p>If after using Ceaseless you’ve experienced more joy in God, the next step is to <strong><a href="share.html">share it and invite others to join</a></strong>. </p>
+<h4 id="__step-3-going-above-and-beyond__"><strong>Step 3: Going above and beyond</strong></h4>
 <p>Finally, if God moves you to support this mission beyond just praying for your friends, please <a href="#cta">let me know</a>. It is my passion to see believers unleashed in using their gifts to advance the gospel and whether that be through financial investment, volunteer effort, collaboration, access to platforms to share the vision and inviting brothers and sisters to the task or anything else, I would be delighted to talk with you.</p>
 <p>I close this letter with an invitation to joy.
 Jesus said:</p>
@@ -250,6 +308,7 @@ Jesus said:</p>
           </section>
         </section>
       </section>
+
       <p><!-- CTA --></p>
 <section id="cta">
 
@@ -279,6 +338,38 @@ Jesus said:</p>
 
 </section>
 
+
+      <!-- <div class="row">
+    <div class="6u">
+
+      <section class="box special">
+        <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+        <h3>For Churches &amp; Ministries</h3>
+        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+        <ul class="actions">
+          <li><a href="#" class="button alt">Learn More</a></li>
+        </ul>
+      </section>
+
+    </div>
+    <div class="6u">
+
+      <section class="box special">
+        <span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+        <h3>For Individuals</h3>
+        <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+        <ul class="actions">
+          <li><a href="#" class="button alt">Learn More</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+<p></section></p>
+ -->
+      <!--  -->
+      <!--  -->
 
       <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c02b027104c561"></script>
