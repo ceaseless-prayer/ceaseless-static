@@ -7,7 +7,7 @@ You're busy and it's hard to remember to pray for others. Prayer lists grow so l
 Ceaseless helps you overcome these problems by giving you something to look forward to each morning: a short list of people to pray for. By helping you regularly pray for others over the long term, you can experience the joy of seeing God bless others as you have asked Him to.
 
 ## How do I use it?
-Download the App in the [App Store](). On the first run you will see a Scripture and three people to pray for. You can explore more ways to use Ceaseless in this [Getting Started Guide]().
+Download the App in the [App Store](https://itunes.apple.com/us/app/ceaseless/id973610764?mt=8). On the first run you will see a Scripture and three people to pray for. You can explore more ways to use Ceaseless in this [Getting Started Guide](assets/downloads/CeaselessGettingStartedGuide-2015-05-09.pdf).
 
 ## What makes Ceaseless special?
 First, Ceaseless is personal--it helps you pray for people. Instead of praying for countries, why not pray for the leaders of those countries? Instead of praying about issues, why not pray for people who impact those issues? Instead of praying for projects, why not pray for the people doing the project? Instead of praying about problems, why not pray for people experiencing those problems?
