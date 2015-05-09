@@ -9,6 +9,13 @@ Ceaseless helps you overcome these problems by giving you something to look forw
 ## How do I use it?
 Download the App in the [App Store](). On the first run you will see a Scripture and three people to pray for. You can explore more ways to use Ceaseless in this [Getting Started Guide]().
 
+## What makes Ceaseless special?
+First, Ceaseless is personal--it helps you pray for people. Instead of praying for countries, why not pray for the leaders of those countries? Instead of praying about issues, why not pray for people who impact those issues? Instead of praying for projects, why not pray for the people doing the project? Instead of praying about problems, why not pray for people experiencing those problems?
+
+Second, Ceaseless is focused on praying, not on asking for prayer. It is outward focused and helps you pray even for people who would never ask you for prayer. For example, no one expects members of ISIS to ask Christians to pray for them. Yet, Jesus taught His followers to love and pray for their enemies, so Ceaseless helps people pray for enemies, loved ones and everyone in between.
+
+Third, Ceaseless is designed to depend on God. Instead of trying to help people feel encouraged by notifying them that they are being prayed for, Ceaseless leaves it to the people praying to reach out if they feel led to. At the end of the day, the power of prayer rests on God answering prayer, not on people knowing they are prayed for. Ceaseless is designed to help set the stage through regular interactions with God and others, but only God can deliver the amazing, transformative and joyful outcomes that we ask Him for.
+
 ## Is Ceaseless private/secure?
 Ceaseless stores all data on your local device--it is as secure as your iPhone or iPad. You can choose to share Scripture or notes or message people. These actions are always initiated by you and everything is private by default.
 
