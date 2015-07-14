@@ -97,7 +97,6 @@ layout: src/templates/layouts/fb-app-layout.hbs
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
-      refreshToken();
 
       if ($.QueryString["suspend"] === 'true') {
         $("div.suspend_account").show();
