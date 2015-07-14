@@ -1,0 +1,49 @@
+---
+layout: src/templates/layouts/fb-app-layout.hbs
+---
+<section class="container" id="main">
+  <header>
+    <h2>Your Friends</h2>
+    <p>Remove friends from your list.</p>
+  </header>
+  <div class="box">
+    {{> loading-spinner }}
+    {{> fb-login-wrapper }}
+    <div class="row">
+      <div class="12u">
+        <h3>Message friends you prayed for:</h3>
+        <ul id="friends" class="alt friend-list">
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="12u">
+        <a href="default.html" class="button big">Return home</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  var removeFriend = function (recipient) {
+    // TODO implement removing a friend.
+  };
+</script>
+<script type="text/javascript">
+  var fbInitActions = {
+    connected: function () {
+      $('div.fb-login-wrapper').hide();
+      $.getJSON("/api/friends.php", {}, function (response) {
+        var friends = response.friends;
+        friends.forEach(function (f) {
+          // generate a send message button for each person
+          var tmpl = $("<li><a href='javascript:removeMessage(\"" + f.friend_id + "\")'>");
+          tmpl.find("a").append("<img src='profile-pictures/" + f.friend_profile_picture_url + "'/><br/>");
+          var name = f.friend_name;
+          tmpl.find("a").append(name);
+          tmpl.appendTo("#friends");
+        });
+        $("div.loading-spinner").hide();
+      });
+    }
+  };
+</script>
