@@ -54,6 +54,7 @@ layout: src/templates/layouts/fb-app-layout.hbs
       $('#add-friend-btn').attr('disabled',true);
       $.post('/api/friends.php', {friend_name: newFriendName, add: true}, function (response) {
         console.log('Added ' + newFriendName, response);
+        $('#new-friend-name').val('');
         hideAddFriendForm();
         $('#add-friend-btn').attr('disabled',false);
         fetchAndRenderFriends();
