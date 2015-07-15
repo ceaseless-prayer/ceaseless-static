@@ -5,6 +5,19 @@ layout: src/templates/layouts/fb-app-layout.hbs
   <header>
     <h2>Your Friends</h2>
     <p>The people Ceaseless reminds you to pray for.</p>
+    <div>
+      <button class="button" id="friend-form-btn">+ Add Friend</button>
+    </div>
+    <div id="add-friend-form" class="box" style="display:none;">
+      <div class="row collapse-at-2">
+        <div class="8u">
+          <input id="new-friend-name" type="text" placeholder="Enter a name to pray for"/>
+        </div>
+        <div class="4u">
+          <a href="#" class="button" id="add-friend-btn">Add friend to pray for</a>
+        </div>
+      </div>
+    </div>
   </header>
   <div class="box">
     {{> loading-spinner }}
@@ -24,6 +37,31 @@ layout: src/templates/layouts/fb-app-layout.hbs
   </div>
 </section>
 <script type="text/javascript">
+  function showAddFriendForm () {
+    $('#friend-form-btn').hide();
+    $('#add-friend-form').show();
+  }
+  function hideAddFriendForm () {
+    $('#friend-form-btn').show();
+    $('#add-friend-form').hide();
+  }
+  $('#friend-form-btn').click(showAddFriendForm);
+
+  function addFriend (e) {
+    e.preventDefault();
+    var newFriendName = $("#new-friend-name").val().trim();
+    if(newFriendName.length > 1) {
+      $('#add-friend-btn').attr('disabled',true);
+      $.post('/api/friends.php', {friend_name: newFriendName, add: true}, function (response) {
+        console.log('Added ' + newFriendName, response);
+        hideAddFriendForm();
+        $('#add-friend-btn').attr('disabled',false);
+        fetchAndRenderFriends();
+      });
+    }
+  }
+  $('#add-friend-btn').click(addFriend);
+
   var $el = $("#friends");
   var listView = $el;
 
@@ -35,29 +73,35 @@ layout: src/templates/layouts/fb-app-layout.hbs
       console.log("Removed " + friend_id, response);
     });
   };
+
+  function fetchAndRenderFriends() {
+    $("div.loading-spinner").show();
+    listView.empty();
+    $.getJSON("/api/friends.php", {}, function (response) {
+      friends = response.friends.sort(function (a, b) {
+        return a.friend_name.localeCompare( b.friend_name );
+      });
+      $("#friends-list-title").text("You are praying for " + friends.length + " people");
+      friends.forEach(function (f) {
+        var name = f.friend_name;
+        var id = f.friend_id;
+        var $li = "<li id=\"friend" + id + "\">";
+        var $img = "<img src='profile-pictures/" + f.friend_profile_picture_url + "'/>";
+        var $h4 = "<h4>" + name + "</h4>";
+
+        var $a = "<a href='javascript:removeFriend(\"" + id + "\")'>Remove from Ceaseless</a>";
+        var tmpl = $($li + $img + $h4 + $a);
+        listView.append(tmpl);
+      });
+      $("div.loading-spinner").hide();
+    });
+  }
 </script>
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
       $('div.fb-login-wrapper').hide();
-            $.getJSON("/api/friends.php", {}, function (response) {
-        friends = response.friends.sort(function (a, b) {
-          return a.friend_name.localeCompare( b.friend_name );
-        });
-        $("#friends-list-title").text("You are praying for " + friends.length + " people");
-        friends.forEach(function (f) {
-          var name = f.friend_name;
-          var id = f.friend_id;
-          var $li = "<li id=\"friend" + id + "\">";
-          var $img = "<img src='profile-pictures/" + f.friend_profile_picture_url + "'/>";
-          var $h4 = "<h4>" + name + "</h4>";
-
-          var $a = "<a href='javascript:removeFriend(\"" + id + "\")'>Remove from Ceaseless</a>";
-          var tmpl = $($li + $img + $h4 + $a);
-          listView.append(tmpl);
-        });
-        $("div.loading-spinner").hide();
-      });
+      fetchAndRenderFriends();
     }
   };
 </script>
