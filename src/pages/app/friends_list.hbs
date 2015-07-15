@@ -4,14 +4,14 @@ layout: src/templates/layouts/fb-app-layout.hbs
 <section class="container" id="main">
   <header>
     <h2>Your Friends</h2>
-    <p>Remove friends from your list.</p>
+    <p>The people Ceaseless reminds you to pray for.</p>
   </header>
   <div class="box">
     {{> loading-spinner }}
     {{> fb-login-wrapper }}
     <div class="row">
-      <div class="12u">
-        <h3>Message friends you prayed for:</h3>
+      <div class="12u" style="text-align:center">
+        <h3 id="friends-list-title">You are praying for:</h3>
         <ul id="friends" class="alt friend-list">
         </ul>
       </div>
@@ -24,23 +24,37 @@ layout: src/templates/layouts/fb-app-layout.hbs
   </div>
 </section>
 <script type="text/javascript">
-  var removeFriend = function (recipient) {
-    // TODO implement removing a friend.
+  var $el = $("#friends");
+  var listView = $el;
+
+  var friends = [];
+
+  var removeFriend = function (friend_id) {
+    listView.find("#friend"+friend_id)[0].remove();
+    $.post("/api/friends.php", {friend_id: friend_id, remove: true}, function (response) {
+      console.log("Removed " + friend_id, response);
+    });
   };
 </script>
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
       $('div.fb-login-wrapper').hide();
-      $.getJSON("/api/friends.php", {}, function (response) {
-        var friends = response.friends;
+            $.getJSON("/api/friends.php", {}, function (response) {
+        friends = response.friends.sort(function (a, b) {
+          return a.friend_name.localeCompare( b.friend_name );
+        });
+        $("#friends-list-title").text("You are praying for " + friends.length + " people");
         friends.forEach(function (f) {
-          // generate a send message button for each person
-          var tmpl = $("<li><a href='javascript:removeMessage(\"" + f.friend_id + "\")'>");
-          tmpl.find("a").append("<img src='profile-pictures/" + f.friend_profile_picture_url + "'/><br/>");
           var name = f.friend_name;
-          tmpl.find("a").append(name);
-          tmpl.appendTo("#friends");
+          var id = f.friend_id;
+          var $li = "<li id=\"friend" + id + "\">";
+          var $img = "<img src='profile-pictures/" + f.friend_profile_picture_url + "'/>";
+          var $h4 = "<h4>" + name + "</h4>";
+
+          var $a = "<a href='javascript:removeFriend(\"" + id + "\")'>Remove from Ceaseless</a>";
+          var tmpl = $($li + $img + $h4 + $a);
+          listView.append(tmpl);
         });
         $("div.loading-spinner").hide();
       });
