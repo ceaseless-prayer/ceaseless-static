@@ -87,7 +87,12 @@ layout: src/templates/layouts/fb-app-layout.hbs
         var name = f.friend_name;
         var id = f.friend_id;
         var $li = "<li id=\"friend" + id + "\">";
-        var $img = "<img src='profile-pictures/" + f.friend_profile_picture_url + "'/>";
+        var $img;
+        if (f.friend_profile_picture_url) {
+          $img = "<img src='profile-pictures/" + f.friend_profile_picture_url + "'/>";
+        } else {
+          $img = "<img src='assets/img/default_profile_pic.jpg'/>";
+        }
         var $h4 = "<h4>" + name + "</h4>";
 
         var $a = "<a href='javascript:removeFriend(\"" + id + "\")'>Remove from Ceaseless</a>";
