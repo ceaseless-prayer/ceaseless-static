@@ -28,6 +28,10 @@ menuItems:
   url:
     faq.html
 - label:
+    Press Kit
+  url:
+    #press_kit
+- label:
     Contact
   url:
     "#cta"
@@ -61,7 +65,7 @@ menuItems:
             Read the <a href="assets/downloads/CeaselessGettingStartedGuide-2015-05-09.pdf">Getting Started Guide</a> for more ways you can use Ceaseless in your daily life.
           </p>
           <hr/>
-          <h3>We are already praying for <strong>over 130,000 friends</strong>.<br/>
+          <h3>We are already praying for <strong>over 137,000 friends</strong>.<br/>
               By joining, you can help us personally pray for <strong>everyone on earth</strong>.</h3>
           {{> call-to-action }}
         </section>
@@ -74,6 +78,17 @@ menuItems:
               gallery: {
                 enabled:true
               }
+            });
+          });
+
+          $(document).ready(function() {
+            $('.popup-youtube').magnificPopup({
+              disableOn: 700,
+              type: 'iframe',
+              mainClass: 'mfp-fade',
+              removalDelay: 160,
+              preloader: false,
+              fixedContentPos: false
             });
           });
         </script>
@@ -92,12 +107,13 @@ menuItems:
             {{md "src/content/index/letter.md" }}
           </section>
         </section>
+
+        {{md "src/content/index/press_kit.md" }}
+
       </section>
 
       {{md "src/content/index/cta.md" }}
 
       <!-- {{md "src/content/index/targets.md" }} -->
       <!-- {{md "src/content/index/testimonials.md" }} -->
-      <!-- {{md "src/content/index/press_kit.md" }} -->
-
       {{> addthis-scripts }}

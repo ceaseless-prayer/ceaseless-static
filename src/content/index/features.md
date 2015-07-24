@@ -28,11 +28,12 @@
   {{> call-to-action }}
   <div class="feature-gallery row uniform">
     <div class="12u">
-    <a href="images/iphone/Screenshot1-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot1-200x356.png"/></a>
-    <a href="images/iphone/Screenshot2-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot2-200x356.png"/></a>
-    <a href="images/iphone/Screenshot3-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot3-200x356.png"/></a>
-    <a href="images/iphone/Screenshot4-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot4-200x356.png"/></a>
-    <a href="images/iphone/Screenshot5-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot5-200x356.png"/></a>
+      <a class="popup-youtube" href="https://www.youtube.com/watch?v=BHh_eUjb3ew"><img class="feature-image" src="images/iphone/app_preview_video_cover.png"/></a>
+      <a href="images/iphone/Screenshot1-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot1-200x356.png"/></a>
+      <a href="images/iphone/Screenshot2-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot2-200x356.png"/></a>
+      <a href="images/iphone/Screenshot3-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot3-200x356.png"/></a>
+      <a href="images/iphone/Screenshot4-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot4-200x356.png"/></a>
+      <a href="images/iphone/Screenshot5-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot5-200x356.png"/></a>
     </div>
   </div>
 </section>
