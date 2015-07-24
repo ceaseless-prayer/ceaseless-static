@@ -86,16 +86,23 @@
 
 
 
-<style type="text/css">
-  .suspend_account, .account_suspended, .account_not_suspended, .unsuspend_account,
-  .sending_spinner, #feedback_form
-  {
-    display: none;
-  }
-</style>
 <section class="container" id="main">
   <header>
-    <h2>Suspend Ceaseless Account</h2>
+    <h2>Your Friends</h2>
+    <p>The people Ceaseless reminds you to pray for.</p>
+    <div>
+      <button class="button" id="friend-form-btn">+ Add Friend</button>
+    </div>
+    <div id="add-friend-form" class="box" style="display:none;">
+      <div class="row collapse-at-2">
+        <div class="8u">
+          <input id="new-friend-name" type="text" placeholder="Enter a name to pray for"/>
+        </div>
+        <div class="4u">
+          <a href="#" class="button" id="add-friend-btn">Add friend to pray for</a>
+        </div>
+      </div>
+    </div>
   </header>
   <div class="box">
     <div class="loading-spinner">
@@ -108,101 +115,95 @@
   </fb:login-button>
 </div>
 
-
-    <div class="suspend_account">
-      <h3>Suspend Account</h3>
-
-      <p>We're sorry to see you go!
-        Thank you for joining us in praying for everyone on earth.
-      </p>
-      <button id="suspend_account_btn" class="button big special">Suspend account</button>
-      <a href="preferences.html" class="button big cancel_btn">Cancel</a>
-      <div class="sending_spinner">
-        <img src="images/spinner.gif"/>
-      </div>
-      <div class="account_suspended">
-        <label>All set! Please give us feedback.</label>
-        <div class="video-container">
-          <iframe id="feedback_form" height="500"
-                  src="https://docs.google.com/forms/d/15AlxeQppGom4rEHYNGcuRj7vM9mw1ZX1WJ4SX36vqug/viewform?embedded=true"
-                  frameborder="0" marginheight="0" marginwidth="0">Loading...
-          </iframe>
-        </div>
-        <a class="button big special" href="default.html">Return home.</a>
-      </div>
-      <div class="account_not_suspended">
-        <label>Sorry, we couldn't suspend your account at this time. <a href="contact.html">Contact
-          us</a> to get help.</label>
+    <div class="row">
+      <div class="12u" style="text-align:center">
+        <h3 id="friends-list-title">You are praying for:</h3>
+        <ul id="friends" class="alt friend-list">
+        </ul>
       </div>
     </div>
-
-    <div class="unsuspend_account">
-      <h3>Re-enable Account</h3>
-
-      <p>Welcome back!
-        Thank you for joining us in praying for everyone on earth.
-      </p>
-      <button id="enable_account_btn" class="button big special">Enable account</button>
-      <a href="preferences.html" class="button big cancel_btn">Cancel</a>
-      <div class="sending_spinner">
-        <img src="images/spinner.gif"/>
+    <div class="row">
+      <div class="12u">
+        <a href="default.html" class="button big">Return home</a>
       </div>
     </div>
   </div>
 </section>
-
 <script type="text/javascript">
-  var changeSuspension = function (e) {
+  function showAddFriendForm () {
+    $('#friend-form-btn').hide();
+    $('#add-friend-form').show();
+  }
+  function hideAddFriendForm () {
+    $('#friend-form-btn').show();
+    $('#add-friend-form').hide();
+  }
+  $('#friend-form-btn').click(showAddFriendForm);
+
+  function addFriend (e) {
     e.preventDefault();
-    $("span.sending_spinner").show();
-    $.ajax({
-      type: 'POST',
-      url: '/api/suspend.php',
-      dataType: 'json',
-      success: function (data) {
-        $("span.sending_spinner").hide();
-        if ($.QueryString['suspend'] === 'false') {
-          window.location = '/';
+    var newFriendName = $("#new-friend-name").val().trim();
+    if(newFriendName.length > 1) {
+      $('#add-friend-btn').attr('disabled',true);
+      $.post('/api/friends.php', {friend_name: newFriendName, add: true}, function (response) {
+        console.log('Added ' + newFriendName, response);
+        $('#new-friend-name').val('');
+        hideAddFriendForm();
+        $('#add-friend-btn').attr('disabled',false);
+        fetchAndRenderFriends();
+      });
+    }
+  }
+  $('#add-friend-btn').click(addFriend);
+
+  var $el = $("#friends");
+  var listView = $el;
+
+  var friends = [];
+
+  var removeFriend = function (friend_id) {
+    listView.find("#friend"+friend_id)[0].remove();
+    $.post("/api/friends.php", {friend_id: friend_id, remove: true}, function (response) {
+      console.log("Removed " + friend_id, response);
+    });
+  };
+
+  function fetchAndRenderFriends() {
+    $("div.loading-spinner").show();
+    listView.empty();
+    $.getJSON("/api/friends.php", {}, function (response) {
+      friends = response.friends.sort(function (a, b) {
+        return a.friend_name.localeCompare( b.friend_name );
+      });
+      $("#friends-list-title").text("You are praying for " + friends.length + " people");
+      friends.forEach(function (f) {
+        var name = f.friend_name;
+        var id = f.friend_id;
+        var $li = "<li id=\"friend" + id + "\">";
+        var $img;
+        if (f.friend_profile_picture_url) {
+          $img = "<img src='profile-pictures/" + f.friend_profile_picture_url + "'/>";
         } else {
-          if (data.success) {
-            $(".account_not_suspended").hide();
-            $(".account_suspended").show();
-            $("#suspend_account_btn").hide();
-            $(".cancel_btn").hide();
-            $("#feedback_form").show();
-          } else {
-            $(".account_suspended").hide();
-            $(".account_not_suspended").show();
-          }
+          $img = "<img src='assets/img/default_profile_pic.jpg'/>";
         }
-      },
-      data: {
-        'fb_id': FB.getUserID(),
-        'suspend': $.QueryString["suspend"]
-      },
-      async: true
+        var $h4 = "<h4>" + name + "</h4>";
+
+        var $a = "<a href='javascript:removeFriend(\"" + id + "\")'>Remove from Ceaseless</a>";
+        var tmpl = $($li + $img + $h4 + $a);
+        listView.append(tmpl);
+      });
+      $("div.loading-spinner").hide();
     });
   }
-
-  $("#suspend_account_btn").on("click", changeSuspension);
-  $("#enable_account_btn").on("click", changeSuspension);
 </script>
 <script type="text/javascript">
   var fbInitActions = {
     connected: function () {
-
-      if ($.QueryString["suspend"] === 'true') {
-        $("div.suspend_account").show();
-      } else {
-        $("div.unsuspend_account").show();
-      }
-
-      $("div.loading-spinner").hide();
-      $("div.fb-login-wrapper").hide();
+      $('div.fb-login-wrapper').hide();
+      fetchAndRenderFriends();
     }
   };
 </script>
-
 
 
 <!-- Footer -->

@@ -82,6 +82,8 @@
           
             <li><a href="faq.html">FAQ</a></li>
           
+            <li><a href="#press_kit">Press Kit</a></li>
+          
             <li><a href="#cta">Contact</a></li>
           
           <li><a href="share.html">Share Ceaseless</a></li>
@@ -137,7 +139,7 @@
             Read the <a href="assets/downloads/CeaselessGettingStartedGuide-2015-05-09.pdf">Getting Started Guide</a> for more ways you can use Ceaseless in your daily life.
           </p>
           <hr/>
-          <h3>We are already praying for <strong>over 130,000 friends</strong>.<br/>
+          <h3>We are already praying for <strong>over 137,000 friends</strong>.<br/>
               By joining, you can help us personally pray for <strong>everyone on earth</strong>.</h3>
           <ul class="actions">
   <li><a href="index.html#download" class="button special">Help me pray for my friends</a></li>
@@ -154,6 +156,17 @@
               gallery: {
                 enabled:true
               }
+            });
+          });
+
+          $(document).ready(function() {
+            $('.popup-youtube').magnificPopup({
+              disableOn: 700,
+              type: 'iframe',
+              mainClass: 'mfp-fade',
+              removalDelay: 160,
+              preloader: false,
+              fixedContentPos: false
             });
           });
         </script>
@@ -189,13 +202,23 @@
   <li><a href="share.html" class="button">Share Ceaseless</a></li>
 </ul>
 
-  <div class="feature-gallery row uniform">
+  <div class="row uniform">
     <div class="12u">
-    <a href="images/iphone/Screenshot1-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot1-200x356.png"/></a>
-    <a href="images/iphone/Screenshot2-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot2-200x356.png"/></a>
-    <a href="images/iphone/Screenshot3-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot3-200x356.png"/></a>
-    <a href="images/iphone/Screenshot4-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot4-200x356.png"/></a>
-    <a href="images/iphone/Screenshot5-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot5-200x356.png"/></a>
+      <div class="row">
+        <div class="3u -3u">
+          <h3>Watch the App Preview Video</h3>
+        </div>
+        <div class="3u">
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=BHh_eUjb3ew"><img class="feature-image" src="images/iphone/app_preview_video_cover.png"/></a>
+        </div>
+      </div>
+      <div class="feature-gallery">
+        <a href="images/iphone/Screenshot1-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot1-200x356.png"/></a>
+        <a href="images/iphone/Screenshot2-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot2-200x356.png"/></a>
+        <a href="images/iphone/Screenshot3-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot3-200x356.png"/></a>
+        <a href="images/iphone/Screenshot4-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot4-200x356.png"/></a>
+        <a href="images/iphone/Screenshot5-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot5-200x356.png"/></a>
+      </div>
     </div>
   </div>
 </section>
@@ -314,6 +337,24 @@ Jesus said:</p>
 
           </section>
         </section>
+
+        <section id="press_kit" class="container">
+  <section class="box">
+    <header>
+    <h3>Ceaseless Press Kit</h3>
+    </header>
+    <p>Do you want to write about Ceaseless or share it with others? The press kit can help.</p>
+    <p><strong>The kit includes</strong>: The Ceaseless App Review Guide, a getting started guide showing how Ceaseless fits in daily life,
+    app screenshots and preview video, an infographic and app card you can print and share, lifestyle photos, and more.</p>
+
+    <a class="button" href="http://www.ceaselessprayer.com/ceaseless-ios-presskit.zip">
+      Download the Ceaseless Press Kit
+    </a>
+  </section>
+</section>
+
+
+
       </section>
 
       <p><!-- CTA --></p>
@@ -376,8 +417,6 @@ Jesus said:</p>
 <p></section></p>
  -->
       <!--  -->
-      <!--  -->
-
       <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c02b027104c561"></script>
 
