@@ -26,14 +26,23 @@
   </div>
   <br/>
   {{> call-to-action }}
-  <div class="feature-gallery row uniform">
+  <div class="row uniform">
     <div class="12u">
-      <a class="popup-youtube" href="https://www.youtube.com/watch?v=BHh_eUjb3ew"><img class="feature-image" src="images/iphone/app_preview_video_cover.png"/></a>
-      <a href="images/iphone/Screenshot1-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot1-200x356.png"/></a>
-      <a href="images/iphone/Screenshot2-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot2-200x356.png"/></a>
-      <a href="images/iphone/Screenshot3-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot3-200x356.png"/></a>
-      <a href="images/iphone/Screenshot4-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot4-200x356.png"/></a>
-      <a href="images/iphone/Screenshot5-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot5-200x356.png"/></a>
+      <div class="row">
+        <div class="3u -3u">
+          <h3>Watch the App Preview Video</h3>
+        </div>
+        <div class="3u">
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=BHh_eUjb3ew"><img class="feature-image" src="images/iphone/app_preview_video_cover.png"/></a>
+        </div>
+      </div>
+      <div class="feature-gallery">
+        <a href="images/iphone/Screenshot1-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot1-200x356.png"/></a>
+        <a href="images/iphone/Screenshot2-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot2-200x356.png"/></a>
+        <a href="images/iphone/Screenshot3-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot3-200x356.png"/></a>
+        <a href="images/iphone/Screenshot4-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot4-200x356.png"/></a>
+        <a href="images/iphone/Screenshot5-750x1337.png"><img class="feature-image" src="images/iphone/Screenshot5-200x356.png"/></a>
+      </div>
     </div>
   </div>
 </section>
