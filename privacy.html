@@ -145,6 +145,11 @@ Ceaseless takes all measures reasonably necessary to protect against the unautho
   ga('create', 'UA-44378341-1', 'auto');
   ga('send', 'pageview');
 
+  // dealing with single page bounce rate.
+  // a bounce will be a <7second visit.
+  setTimeout(function() {
+    _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', '']);
+  }, 7000);
 </script>
 
 </body>
