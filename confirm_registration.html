@@ -166,9 +166,8 @@
   ga('send', 'pageview');
 
   // dealing with single page bounce rate.
-  // a bounce will be a <7second visit.
   setTimeout(function() {
-    _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', '']);
+    ga('send', 'event', 'adjusted bounce rate', 'page visit 7 seconds or more');
   }, 7000);
 </script>
 
