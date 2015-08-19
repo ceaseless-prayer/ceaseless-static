@@ -189,12 +189,14 @@
 
 <!-- MouseFlow -->
     <script type="text/javascript">
+      if (location.hostname === 'ceaselessprayer.com') {
         var _mfq = _mfq || [];
         (function () {
-        var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
-        mf.src = "//cdn.mouseflow.com/projects/7496f687-23a5-41e8-833f-e95b2e075f6a.js";
-        document.getElementsByTagName("head")[0].appendChild(mf);
-      })();
+          var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+          mf.src = "//cdn.mouseflow.com/projects/7496f687-23a5-41e8-833f-e95b2e075f6a.js";
+          document.getElementsByTagName("head")[0].appendChild(mf);
+        })();
+      }
     </script>
 
 </body>
