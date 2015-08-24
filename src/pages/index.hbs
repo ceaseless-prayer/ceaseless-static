@@ -3,7 +3,7 @@ layout: src/templates/layouts/landing.hbs
 title: An Invitation to Joy
 headline: Experience the joy of praying for others
 subhead: Pray for 3 friends each day and together we can pray for everyone on earth.
-cta1: Get Started
+cta1: Download Now
 cta2: Learn More
 share: Share Ceaseless
 menuItems:
@@ -100,16 +100,16 @@ menuItems:
         {{md "src/content/index/features.md" }}
         {{md "src/content/index/download.md" }}
 
-        <section id="subscribe" class="box">
-          <h2>Stay up to date</h2>
-          <p>Sign up below to get the Ceaseless newsletter with news, tips and more (normally 1-2 emails a month).</p>
-          {{> mail-chimp}}
-        </section>
-
         <section id="letter" class="container">
           <section class="box">
             {{md "src/content/index/letter.md" }}
           </section>
+        </section>
+
+        <section id="subscribe" class="box">
+          <h2>Stay up to date</h2>
+          <p>Sign up below to get the Ceaseless newsletter with news, tips and more (normally 1-2 emails a month).</p>
+          {{> mail-chimp}}
         </section>
 
         {{md "src/content/index/press_kit.md" }}
