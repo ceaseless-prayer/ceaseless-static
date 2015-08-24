@@ -87,6 +87,12 @@ module.exports = function(grunt) {
           gfm: true,
           tables: true,
           smartLists: true
+        },
+        plugins: ['assemble-contrib-sitemap'],
+        sitemap: {
+          homepage: 'http://www.ceaselessprayer.com',
+          dest: '<%= config.dist %>',
+          relativedest: '../'
         }
       },
       pages: {
