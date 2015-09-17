@@ -1,11 +1,9 @@
 Ceaseless is an app that helps you pray for others. 
 
-## Why do I want it?
-When was the last time you promised to pray for someone and forgot to? With Ceaseless that doesn't need to happen again. Every day the app shows you a few people to pray for accompanied by your notes from conversations with them. So the next time somone asks you to pray, look them up in Ceaseless and add a note. The next time they show up you'll know what to ask and how to follow up with them.
-
-By regularly praying for others over the long term, you can experience the joy of seeing God bless others as you have asked Him to. This applies to friends who normally wouldn't ask you to pray for them too! What might God do as we pray more and more for people who we don't usually remember? And what better way to love others than to take the first step of praying for them?
-
-## How do I use it?
+## How do I use this app?
+<div class="video-container">
+<iframe width="420" height="315" src="https://www.youtube.com/embed/BHh_eUjb3ew" frameborder="0" allowfullscreen></iframe>
+</div>
 When you open the app, you will see a Scripture related to prayer to help you think about what God wants in your relationship with him.
 
 After meditating on the text, you swipe to the next card, which will show you someone to pray for. In addition to praying, you can:
@@ -18,6 +16,10 @@ After meditating on the text, you swipe to the next card, which will show you so
 After swiping through the people to pray for on that day, you will see your progress praying for the people in your address book. You can tap, "Show more people" to get more people to pray for. If there are any announcements, you will see them listed on this card as well. Tapping on the announcement will open a view with more details.
 
 That's it!
+## Why do I want it?
+When was the last time you promised to pray for someone and forgot to? With Ceaseless that doesn't need to happen again. Every day the app shows you a few people to pray for accompanied by your notes from conversations with them. So the next time somone asks you to pray, look them up in Ceaseless and add a note. The next time they show up you'll know what to ask and how to follow up with them.
+
+By regularly praying for others over the long term, you can experience the joy of seeing God bless others as you have asked Him to. This applies to friends who normally wouldn't ask you to pray for them too! What might God do as we pray more and more for people who we don't usually remember? And what better way to love others than to take the first step of praying for them?
 
 ## How do I change how many people I see each day?
 To change how many people you get to pray for each day, tap on the Menu, then Settings, and change the count.
