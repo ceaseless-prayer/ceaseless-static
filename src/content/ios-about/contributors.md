@@ -8,6 +8,7 @@ We would like to acknowledge the following people who made Ceaseless possible (i
 * Christopher Lim
 * Kim-Fu Lim
 * William Mari
+* Kent Oshiro
 * Anson Qian
 * Brian Vanaski
 * Scott Yamamura
