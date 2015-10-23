@@ -43,3 +43,8 @@
 .feature-image {
   width: 75px;
 }
+
+.download-buttons li {
+  display: inline;
+  list-style-type: none;
+}
