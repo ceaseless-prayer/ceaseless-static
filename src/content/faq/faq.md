@@ -1,13 +1,15 @@
 ## What is Ceaseless?
 Ceaseless is an app for iPhone and iPad that helps you pray for others. It syncs with your Contacts and shows you three people to pray for each day. You can add notes and use it as a prayer journal.
 
+Ceaseless isn't available for Android phones just yet - but we're working on it! If you would like to be notified when it's available, [join the Android waitlist](http://www.ceaselessprayer.com/android_waitlist.html).
+
 ## Why do I want it?
 You're busy and it's hard to remember to pray for others. Prayer lists grow so long they start to feel overwhelming to the point of guilt-ridden indifference.
 
 Ceaseless helps you overcome these problems by giving you something to look forward to each morning: a short list of people to pray for. By helping you regularly pray for others over the long term, you can experience the joy of seeing God bless others as you have asked Him to.
 
 ## How do I use it?
-Download the App in the [App Store](https://itunes.apple.com/us/app/ceaseless/id973610764?mt=8). On the first run you will see a Scripture and three people to pray for. You can explore more ways to use Ceaseless in this [Getting Started Guide](assets/downloads/CeaselessGettingStartedGuide-2015-05-09.pdf).
+Download the app in the [App Store](https://itunes.apple.com/us/app/ceaseless/id973610764?mt=8). Once you have given permission for Ceaseless to access contacts, swipe through the app and see a Scripture and three people to pray for each day. For each person, take a moment to pray for them, write a note, or send them a message to encourage them. You can explore more ways to use Ceaseless in this [Getting Started Guide](assets/downloads/CeaselessGettingStartedGuide-2015-05-09.pdf).
 
 ## What makes Ceaseless special?
 First, Ceaseless is personal--it helps you pray for people. Instead of praying for countries, why not pray for the leaders of those countries? Instead of praying about issues, why not pray for people who impact those issues? Instead of praying for projects, why not pray for the people doing the project? Instead of praying about problems, why not pray for people experiencing those problems?
@@ -20,9 +22,9 @@ Third, Ceaseless is designed to depend on God. Instead of trying to help people 
 Ceaseless stores all data on your local device--it is as secure as your iPhone or iPad. You can choose to share Scripture or notes or message people. These actions are always initiated by you and everything is private by default.
 
 ## How does Ceaseless decide whom to ask me to pray for?
-If you're asking this question, you may want to get involved with the project &#9786;. Get in touch [here](contact.html?subject=I want to get involved) 
+Ceaseless follows a simple process: it takes the list of friends, sorts it from the least "prayed for" to the most, and selects the 3 "least prayed for". Favorited people show up more frequently.
 
-There are some really interesting algorithms and machine learning applications to be had. But to answer the question for now, Ceaseless follows a very rudimentary process: take the list of friends, sort it from the least "prayed for" to the most and send an e-mail with the 3 "least prayed for". Favorited people show up more frequently. 
+There are some really interesting algorithms and machine learning applications to be had. If you're asking this question, you may want to get involved with the project &#9786;. Get in touch [here](contact.html?subject=I want to get involved).
 
 ## How do I share Ceaseless with others?
 If you've found Ceaseless helpful, we would appreciate your help sharing it with others. Go to [this page](share.html) for easy sharing tools.</p>
