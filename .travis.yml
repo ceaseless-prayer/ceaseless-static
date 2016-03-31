@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- "5.1"
+before_script:
+  - npm install -g grunt-cli
+script: bash ./to-gh-pages.sh
+branches:
+  only:
+    - master
+env:
+  global:
+  - GH_REF: github.com/ceaseless-prayer/ceaseless-static.git
+  - secure: "TjGXnr5fR4k51B0SHB0DewdlQ/J0noDLLgaJZRk9/LCobZnbVu38td+PAOQpS+GDptkk9YpQBUhIWLbnuRhVB/YYzYApqzMjTEPkvOHXxN8L6zcNXqnn/oQ+WrONbLyBrMCM90+4mSvwWNXuBLP6Z3TrVt+wT5o1ObhGJnHy8b6q9RfsGg2btGy9lT90HfNono3XxVjPztAw6sfmLioCv4LdlfOgLC/EObm+83x/E32S6X1saIepb+FM78NN58tqo/geYuAV9SW5F+HkUMhu0Wh0cnxn6F5GtFXRxkjWE8N8rcj5MPnYg8sguVFIACaOORhCvPGW8dBAdwvFyVZgYj1V8Xs3al7yElDt1A5UrUgspbW1hUygUGAssR8IQhyOR1NzJ9IeTIGXBIdPxfgEKH8j2UGkRCEPZtrW27dFP3vKYcdtbv+VqXJzD9rtprcEhzXycrU39cAAnQreXRDHMY7wuq1JN7QBUk7KM4KWlKFPrWprEB2FmGP/KAFak21M8KfYAu80h+/Kh0dd0xAvouDHl3derBNe/l5IP2iOlhRS+snvWAGAhnMp9p/Jjd6zUXatYrhL0LIb6+fZCO9yVVTyRNJt5Y7rS8fe6wCRBJyd15iBXBYW61OsuByOedXbRNBksHa34baipH0SM1Cxqfa2ftsAx6i/JhOLbdage6s="
+
