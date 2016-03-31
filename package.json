@@ -2,17 +2,17 @@
   "name": "ceaseless-static",
   "description": "Generated static site for the Ceaseless page.",
   "version": "0.1.0",
-  "homepage": "https://github.com/chrislim/ceaseless-static",
+  "homepage": "https://github.com/ceaseless-prayer/ceaseless-static",
   "author": {
     "name": "Chris",
     "url": "http://github.com/chrislim/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/chrislim/ceaseless-static.git"
+    "url": "git://github.com/ceaseless-prayer/ceaseless-static.git"
   },
   "bugs": {
-    "url": "https://github.com/chrislim/ceaseless-static/issues"
+    "url": "https://github.com/ceaseless-prayer/ceaseless-static/issues"
   },
   "engines": {
     "node": ">=0.10"
