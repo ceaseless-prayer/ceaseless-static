@@ -1,0 +1,33 @@
+---
+layout: src/templates/layouts/announcement.hbs
+title: About
+headline: About
+subhead: Ceaseless contributors, services, licenses, etc.
+menuItems:
+- label:
+    Contact Us
+  url:
+    mailto:ceaseless@theotech.org?subject=Ceaseless%20Android%20Help
+---
+<!-- Banner -->
+<section id="banner">
+  <h2>{{ headline }}</h2>
+  <p>{{ subhead }}</p>
+</section>
+
+<!-- Main -->
+<section id="main" class="container">
+  <section id="content" class="container">
+    <section class="box">
+      {{md "src/content/ios-about/links.md" }}
+      {{md "src/content/ios-about/contributors.md" }}
+      {{md "src/content/ios-about/dbp.md" }}
+      {{md "src/content/ios-about/privacy.md" }}
+      <h2>Licenses</h2>
+      <p>Some software, fonts and other assets in Ceaseless are covered by the following licenses.</p>
+      {{md "src/content/ios-about/font-awesome.md" }}
+      {{md "src/content/ios-about/mit.md" }}
+      {{md "src/content/ios-about/apache2.md" }}
+    </section>
+  </section>
+</section>
