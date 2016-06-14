@@ -5,6 +5,7 @@ We would like to acknowledge the following people who made Ceaseless possible (i
 * Calvin Freitas
 * Lori Hill
 * LouAnn Hunt
+* Yoonhee Jeong
 * Ben Johnson
 * Karin Kaczmarowski
 * Travis Kopp
