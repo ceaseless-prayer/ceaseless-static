@@ -28,9 +28,9 @@ To change how many people you get to pray for each day, tap on the Menu, then Se
 ## How do I remove contacts from Ceaseless?
 There are two ways to remove contacts from Ceaseless:
 
-1. When a contact shows up that you want to remove from Ceaseless, you can tap on their picture and a list of possible actions appear. Scroll down and tap on “Remove from Ceaseless.”
+1. When a contact shows up that you want to remove from Ceaseless, you can tap on their picture and a list of possible actions appear. Scroll down and tap on &ldquo;Remove from Ceaseless.&rdquo;
 
-2. In the top left hand corner, go to the Menu and tap on People. In the list that appears, remove a contact from Ceaseless by pressing and holding the name until it turns white. Select any other contacts you want to remove, then once you are done, tap “Remove” in the top right hand corner.
+2. In the top left hand corner, go to the Menu and tap on People. In the list that appears, remove a contact from Ceaseless by pressing and holding the name until it turns white. Select any other contacts you want to remove, then once you are done, tap &ldquo;Remove&rdquo; in the top right hand corner.
 
 Either of these methods will ensure the removed contacts will not appear in Ceaseless going forward.
 
