@@ -1,3 +1,4 @@
 dist/
 node_modules/
 ceaseless-static.iml
+.DS_Store
