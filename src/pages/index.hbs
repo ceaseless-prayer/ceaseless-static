@@ -45,7 +45,7 @@ menuItems:
         <h2>{{ headline }}</h2>
         <p>{{ subhead }}</p>
         <ul class="actions">
-          <li><a href="#download" class="button special">{{ cta1 }}</a></li>
+          <li><a href="#download" class="button special download-btn">{{ cta1 }}</a></li>
           <li><a href="#main" class="button">{{ cta2 }}</a></li>
         </ul>
       </section>
@@ -115,6 +115,7 @@ menuItems:
 
         {{md "src/content/index/features.md" }}
         {{md "src/content/index/download.md" }}
+        <!-- {{md "src/content/index/testimonials.md" }} -->
 
         <section id="letter" class="container">
           <section class="box">
@@ -135,5 +136,5 @@ menuItems:
       {{md "src/content/index/cta.md" }}
 
       <!-- {{md "src/content/index/targets.md" }} -->
-      <!-- {{md "src/content/index/testimonials.md" }} -->
+
       {{> addthis-scripts }}
