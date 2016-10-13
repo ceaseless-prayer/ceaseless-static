@@ -1,5 +1,5 @@
 ## What is Ceaseless?
-Ceaseless is a mobile app available for iOS and Android devices that helps you pray for others. It syncs with your Contacts and shows you three people to pray for each day. You can add notes and use it as a prayer journal. [Download the app today](http://www.ceaselessprayer.com/#download).
+Ceaseless is a mobile app for iOS and Android devices that helps you pray for others. It syncs with your Contacts and shows you three people to pray for each day. You can add notes and use it as a prayer journal. [Download the app today](http://www.ceaselessprayer.com/#download).
 
 ## Why do I want it?
 You're busy and it's hard to remember to pray for others. Prayer lists grow so long they start to feel overwhelming to the point of guilt-ridden indifference.
