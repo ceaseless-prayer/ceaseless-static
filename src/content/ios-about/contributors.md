@@ -3,6 +3,7 @@ We would like to acknowledge the following people who made Ceaseless possible (i
 * Troy Carl
 * Cici Chen
 * Calvin Freitas
+* Chie Harriman
 * Lori Hill
 * LouAnn Hunt
 * Yoonhee Jeong
@@ -18,8 +19,10 @@ We would like to acknowledge the following people who made Ceaseless possible (i
 * Kent Oshiro
 * Joshua Probert
 * Anson Qian
+* Keturah Sandoval
 * David Tesar
 * Brian Vanaski
 * Scott Yamamura
 * Alan Young
 * Many photos provided by contributors to [unsplash.com](http://unsplash.com)
+* Some assets were created with [MockUPhone](http://mockuphone.com/)
