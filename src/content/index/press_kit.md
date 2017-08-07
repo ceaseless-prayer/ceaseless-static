@@ -10,6 +10,9 @@
     <a class="button" href="http://www.ceaselessprayer.com/ceaseless-ios-presskit.zip">
       Download the Ceaseless Press Kit
     </a>
+    <a class="button special" target="_blank" href="http://www.ceaselessprayer.com/assets/downloads/how_to_use_ceaseless_in_churches.pdf">
+      Ways to use Ceaseless at your church
+    </a>
   </section>
 </section>
 
