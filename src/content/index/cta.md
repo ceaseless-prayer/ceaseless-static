@@ -5,7 +5,7 @@
   <h2>Ask a question or contact us</h2>
   <p>If you have any questions about Ceaseless, contact us below. Don't worry, we won't use your e-mail address for any other purpose.</p>
 
-  <form method="post" class="contact-form" data-action-path="http://formspree.io/ceaseless@theotech.org">
+  <form method="post" class="contact-form" data-action-path="https://formspree.io/ceaseless@theotech.org">
     <div class="row uniform half collapse-at-2">
       <div class="6u">
         <input type="text" name="name" placeholder="Name">
