@@ -18,6 +18,8 @@
     "node": ">=0.10"
   },
   "scripts": {
+    "start": "grunt server",
+    "build": "grunt build",
     "test": "grunt assemble"
   },
   "devDependencies": {
@@ -45,5 +47,8 @@
     "site generator",
     "site builder",
     "grunt"
-  ]
+  ],
+  "dependencies": {
+    "grunt-cli": "^1.2.0"
+  }
 }
