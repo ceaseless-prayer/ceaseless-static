@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/ceaseless-prayer/ceaseless-static.svg?branch=master)](https://travis-ci.org/ceaseless-prayer/ceaseless-static)
+
+For info about the CMS please see http://assemble.io
+
 Alpha by HTML5 UP
 html5up.net | @n33co
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
