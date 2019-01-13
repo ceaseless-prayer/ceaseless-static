@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/ceaseless-prayer/ceaseless-static.svg?branch=master)](https://travis-ci.org/ceaseless-prayer/ceaseless-static)
 
-This is legacy code and note used any more! For more information please contact us!
+This is legacy code and not used any more! For more information please contact us!
 
 For info about the CMS please see http://assemble.io
 
